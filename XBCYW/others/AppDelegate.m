@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WXTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    //设置跟踪控制器
+    WXTabBarController *tabbar = [[WXTabBarController alloc]init];
+    
+    self.window.rootViewController = tabbar;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

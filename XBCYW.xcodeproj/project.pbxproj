@@ -15,6 +15,22 @@
 		841A96041CFDB53B004D753B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96031CFDB53B004D753B /* main.m */; };
 		841A96071CFDB59B004D753B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A96051CFDB59B004D753B /* LaunchScreen.storyboard */; };
 		841A96081CFDB59B004D753B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A96061CFDB59B004D753B /* Main.storyboard */; };
+		841A960B1CFE726C004D753B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960A1CFE726C004D753B /* UIView+Extension.m */; };
+		841A96101CFE7287004D753B /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960D1CFE7287004D753B /* WXNavigationController.m */; };
+		841A96111CFE7287004D753B /* WXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960F1CFE7287004D753B /* WXTabBarController.m */; };
+		841A96141CFE72EB004D753B /* WXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96131CFE72EB004D753B /* WXHomeViewController.m */; };
+		841A96171CFE77AA004D753B /* WXSuppliesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96161CFE77AA004D753B /* WXSuppliesViewController.m */; };
+		841A961A1CFE7A20004D753B /* WXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96191CFE7A20004D753B /* WXSearchViewController.m */; };
+		841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96221CFE7B16004D753B /* WXMoreViewController.m */; };
+		841A97401CFE7CB5004D753B /* MDDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97371CFE7CB5004D753B /* MDDataBaseUtil.m */; };
+		841A97411CFE7CB5004D753B /* MViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97391CFE7CB5004D753B /* MViewUtil.m */; };
+		841A97421CFE7CB5004D753B /* UILabel+WXStringFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A973B1CFE7CB5004D753B /* UILabel+WXStringFrame.m */; };
+		841A97431CFE7CB5004D753B /* validateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A973D1CFE7CB5004D753B /* validateTest.m */; };
+		841A97441CFE7CB5004D753B /* WXTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A973F1CFE7CB5004D753B /* WXTopView.m */; };
+		841A97471CFE7D6C004D753B /* WXDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97461CFE7D6C004D753B /* WXDiscoverViewController.m */; };
+		841A974B1CFE857A004D753B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A974A1CFE857A004D753B /* MBProgressHUD.m */; };
+		841A974F1CFE8587004D753B /* SHLUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A974E1CFE8587004D753B /* SHLUILabel.m */; };
+		841A97511CFE86C3004D753B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841A97501CFE86C3004D753B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +66,38 @@
 		841A96031CFDB53B004D753B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Utils/main.m; sourceTree = "<group>"; };
 		841A96051CFDB59B004D753B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841A96061CFDB59B004D753B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		841A96091CFE726C004D753B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		841A960A1CFE726C004D753B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		841A960C1CFE7287004D753B /* WXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNavigationController.h; sourceTree = "<group>"; };
+		841A960D1CFE7287004D753B /* WXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNavigationController.m; sourceTree = "<group>"; };
+		841A960E1CFE7287004D753B /* WXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabBarController.h; sourceTree = "<group>"; };
+		841A960F1CFE7287004D753B /* WXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabBarController.m; sourceTree = "<group>"; };
+		841A96121CFE72EB004D753B /* WXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeViewController.h; sourceTree = "<group>"; };
+		841A96131CFE72EB004D753B /* WXHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeViewController.m; sourceTree = "<group>"; };
+		841A96151CFE77AA004D753B /* WXSuppliesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXSuppliesViewController.h; path = ../WXSuppliesViewController.h; sourceTree = "<group>"; };
+		841A96161CFE77AA004D753B /* WXSuppliesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXSuppliesViewController.m; path = ../WXSuppliesViewController.m; sourceTree = "<group>"; };
+		841A96181CFE7A20004D753B /* WXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSearchViewController.h; sourceTree = "<group>"; };
+		841A96191CFE7A20004D753B /* WXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSearchViewController.m; sourceTree = "<group>"; };
+		841A96211CFE7B16004D753B /* WXMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMoreViewController.h; sourceTree = "<group>"; };
+		841A96221CFE7B16004D753B /* WXMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMoreViewController.m; sourceTree = "<group>"; };
+		841A96241CFE7B59004D753B /* Xbcyw.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Xbcyw.pch; sourceTree = "<group>"; };
+		841A97361CFE7CB5004D753B /* MDDataBaseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDataBaseUtil.h; sourceTree = "<group>"; };
+		841A97371CFE7CB5004D753B /* MDDataBaseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDataBaseUtil.m; sourceTree = "<group>"; };
+		841A97381CFE7CB5004D753B /* MViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MViewUtil.h; sourceTree = "<group>"; };
+		841A97391CFE7CB5004D753B /* MViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MViewUtil.m; sourceTree = "<group>"; };
+		841A973A1CFE7CB5004D753B /* UILabel+WXStringFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+WXStringFrame.h"; sourceTree = "<group>"; };
+		841A973B1CFE7CB5004D753B /* UILabel+WXStringFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WXStringFrame.m"; sourceTree = "<group>"; };
+		841A973C1CFE7CB5004D753B /* validateTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = validateTest.h; sourceTree = "<group>"; };
+		841A973D1CFE7CB5004D753B /* validateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = validateTest.m; sourceTree = "<group>"; };
+		841A973E1CFE7CB5004D753B /* WXTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTopView.h; sourceTree = "<group>"; };
+		841A973F1CFE7CB5004D753B /* WXTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTopView.m; sourceTree = "<group>"; };
+		841A97451CFE7D6C004D753B /* WXDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXDiscoverViewController.h; sourceTree = "<group>"; };
+		841A97461CFE7D6C004D753B /* WXDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXDiscoverViewController.m; sourceTree = "<group>"; };
+		841A97491CFE857A004D753B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		841A974A1CFE857A004D753B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		841A974D1CFE8587004D753B /* SHLUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLUILabel.h; sourceTree = "<group>"; };
+		841A974E1CFE8587004D753B /* SHLUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLUILabel.m; sourceTree = "<group>"; };
+		841A97501CFE86C3004D753B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,16 +148,17 @@
 		841A95991CFDAED9004D753B /* XBCYW */ = {
 			isa = PBXGroup;
 			children = (
-				841A95D61CFDB45C004D753B /* Delicacy（美食） */,
+				841A95E61CFDB45C004D753B /* NewFeature（新特性） */,
 				841A95DA1CFDB45C004D753B /* FrameWork */,
+				841A95E21CFDB45C004D753B /* Main（主框架） */,
 				841A95DB1CFDB45C004D753B /* Headers（头文件） */,
 				841A95DC1CFDB45C004D753B /* Home（首页） */,
-				841A95E21CFDB45C004D753B /* Main（主框架） */,
-				841A95E61CFDB45C004D753B /* NewFeature（新特性） */,
-				841A95E71CFDB45C004D753B /* News */,
+				841A95D61CFDB45C004D753B /* Supplies（供应） */,
+				841A95E71CFDB45C004D753B /* discover(发现) */,
+				841A95F11CFDB45C004D753B /* Search（搜索） */,
+				841A961D1CFE7B00004D753B /* More(更多) */,
 				841A95EB1CFDB45C004D753B /* others */,
 				841A95F01CFDB45C004D753B /* Resource */,
-				841A95F11CFDB45C004D753B /* Search（搜索） */,
 				841A95F51CFDB45D004D753B /* Utils */,
 				841A959A1CFDAEDA004D753B /* Supporting Files */,
 			);
@@ -120,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				841A96051CFDB59B004D753B /* LaunchScreen.storyboard */,
+				841A97501CFE86C3004D753B /* Assets.xcassets */,
 				841A96061CFDB59B004D753B /* Main.storyboard */,
 				841A96011CFDB4F4004D753B /* Info.plist */,
 				841A96031CFDB53B004D753B /* main.m */,
@@ -145,19 +195,22 @@
 			path = XBCYWUITests;
 			sourceTree = "<group>";
 		};
-		841A95D61CFDB45C004D753B /* Delicacy（美食） */ = {
+		841A95D61CFDB45C004D753B /* Supplies（供应） */ = {
 			isa = PBXGroup;
 			children = (
 				841A95D71CFDB45C004D753B /* Controller */,
 				841A95D81CFDB45C004D753B /* Model */,
 				841A95D91CFDB45C004D753B /* View */,
 			);
+			name = "Supplies（供应）";
 			path = "Delicacy（美食）";
 			sourceTree = "<group>";
 		};
 		841A95D71CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				841A96151CFE77AA004D753B /* WXSuppliesViewController.h */,
+				841A96161CFE77AA004D753B /* WXSuppliesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +232,8 @@
 		841A95DA1CFDB45C004D753B /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				841A974C1CFE8587004D753B /* SHLUILabel */,
+				841A97481CFE857A004D753B /* MBProgressHUD */,
 			);
 			path = FrameWork;
 			sourceTree = "<group>";
@@ -186,6 +241,7 @@
 		841A95DB1CFDB45C004D753B /* Headers（头文件） */ = {
 			isa = PBXGroup;
 			children = (
+				841A96241CFE7B59004D753B /* Xbcyw.pch */,
 			);
 			path = "Headers（头文件）";
 			sourceTree = "<group>";
@@ -203,6 +259,8 @@
 		841A95DD1CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				841A96121CFE72EB004D753B /* WXHomeViewController.h */,
+				841A96131CFE72EB004D753B /* WXHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -234,6 +292,8 @@
 		841A95E31CFDB45C004D753B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				841A96091CFE726C004D753B /* UIView+Extension.h */,
+				841A960A1CFE726C004D753B /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -241,6 +301,10 @@
 		841A95E41CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				841A960C1CFE7287004D753B /* WXNavigationController.h */,
+				841A960D1CFE7287004D753B /* WXNavigationController.m */,
+				841A960E1CFE7287004D753B /* WXTabBarController.h */,
+				841A960F1CFE7287004D753B /* WXTabBarController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,19 +323,22 @@
 			path = "NewFeature（新特性）";
 			sourceTree = "<group>";
 		};
-		841A95E71CFDB45C004D753B /* News */ = {
+		841A95E71CFDB45C004D753B /* discover(发现) */ = {
 			isa = PBXGroup;
 			children = (
 				841A95E81CFDB45C004D753B /* Controller */,
 				841A95E91CFDB45C004D753B /* Model */,
 				841A95EA1CFDB45C004D753B /* View */,
 			);
+			name = "discover(发现)";
 			path = News;
 			sourceTree = "<group>";
 		};
 		841A95E81CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				841A97451CFE7D6C004D753B /* WXDiscoverViewController.h */,
+				841A97461CFE7D6C004D753B /* WXDiscoverViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +388,8 @@
 		841A95F21CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				841A96181CFE7A20004D753B /* WXSearchViewController.h */,
+				841A96191CFE7A20004D753B /* WXSearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,8 +411,69 @@
 		841A95F51CFDB45D004D753B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				841A97361CFE7CB5004D753B /* MDDataBaseUtil.h */,
+				841A97371CFE7CB5004D753B /* MDDataBaseUtil.m */,
+				841A97381CFE7CB5004D753B /* MViewUtil.h */,
+				841A97391CFE7CB5004D753B /* MViewUtil.m */,
+				841A973A1CFE7CB5004D753B /* UILabel+WXStringFrame.h */,
+				841A973B1CFE7CB5004D753B /* UILabel+WXStringFrame.m */,
+				841A973C1CFE7CB5004D753B /* validateTest.h */,
+				841A973D1CFE7CB5004D753B /* validateTest.m */,
+				841A973E1CFE7CB5004D753B /* WXTopView.h */,
+				841A973F1CFE7CB5004D753B /* WXTopView.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		841A961D1CFE7B00004D753B /* More(更多) */ = {
+			isa = PBXGroup;
+			children = (
+				841A961E1CFE7B00004D753B /* Controller */,
+				841A961F1CFE7B00004D753B /* Model */,
+				841A96201CFE7B00004D753B /* View */,
+			);
+			path = "More(更多)";
+			sourceTree = "<group>";
+		};
+		841A961E1CFE7B00004D753B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				841A96211CFE7B16004D753B /* WXMoreViewController.h */,
+				841A96221CFE7B16004D753B /* WXMoreViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		841A961F1CFE7B00004D753B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		841A96201CFE7B00004D753B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		841A97481CFE857A004D753B /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				841A97491CFE857A004D753B /* MBProgressHUD.h */,
+				841A974A1CFE857A004D753B /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		841A974C1CFE8587004D753B /* SHLUILabel */ = {
+			isa = PBXGroup;
+			children = (
+				841A974D1CFE8587004D753B /* SHLUILabel.h */,
+				841A974E1CFE8587004D753B /* SHLUILabel.m */,
+			);
+			path = SHLUILabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +538,7 @@
 		841A958F1CFDAED9004D753B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WX;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = admin;
 				TargetAttributes = {
@@ -451,6 +582,7 @@
 			files = (
 				841A96081CFDB59B004D753B /* Main.storyboard in Resources */,
 				841A96021CFDB4F4004D753B /* Info.plist in Resources */,
+				841A97511CFE86C3004D753B /* Assets.xcassets in Resources */,
 				841A96071CFDB59B004D753B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,9 +608,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841A96171CFE77AA004D753B /* WXSuppliesViewController.m in Sources */,
+				841A96111CFE7287004D753B /* WXTabBarController.m in Sources */,
+				841A97441CFE7CB5004D753B /* WXTopView.m in Sources */,
+				841A97471CFE7D6C004D753B /* WXDiscoverViewController.m in Sources */,
+				841A97421CFE7CB5004D753B /* UILabel+WXStringFrame.m in Sources */,
+				841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */,
 				841A95FC1CFDB45D004D753B /* ViewController.m in Sources */,
+				841A974B1CFE857A004D753B /* MBProgressHUD.m in Sources */,
+				841A97411CFE7CB5004D753B /* MViewUtil.m in Sources */,
 				841A96041CFDB53B004D753B /* main.m in Sources */,
+				841A974F1CFE8587004D753B /* SHLUILabel.m in Sources */,
+				841A96101CFE7287004D753B /* WXNavigationController.m in Sources */,
+				841A960B1CFE726C004D753B /* UIView+Extension.m in Sources */,
+				841A97401CFE7CB5004D753B /* MDDataBaseUtil.m in Sources */,
+				841A97431CFE7CB5004D753B /* validateTest.m in Sources */,
 				841A95FB1CFDB45D004D753B /* AppDelegate.m in Sources */,
+				841A96141CFE72EB004D753B /* WXHomeViewController.m in Sources */,
+				841A961A1CFE7A20004D753B /* WXSearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,8 +749,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/Required",
+				);
+				GCC_PREFIX_HEADER = "XBCYW/Headers（头文件）/Xbcyw.pch";
 				INFOPLIST_FILE = XBCYW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ZBarSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = admin.XBCYW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -613,8 +774,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/Required",
+				);
+				GCC_PREFIX_HEADER = "XBCYW/Headers（头文件）/Xbcyw.pch";
 				INFOPLIST_FILE = XBCYW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/XBCYW/FrameWork/ZBarSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = admin.XBCYW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -685,6 +860,7 @@
 				841A95C61CFDAEDA004D753B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		841A95C71CFDAEDA004D753B /* Build configuration list for PBXNativeTarget "XBCYWTests" */ = {
 			isa = XCConfigurationList;
@@ -693,6 +869,7 @@
 				841A95C91CFDAEDA004D753B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		841A95CA1CFDAEDA004D753B /* Build configuration list for PBXNativeTarget "XBCYWUITests" */ = {
 			isa = XCConfigurationList;
@@ -701,6 +878,7 @@
 				841A95CC1CFDAEDA004D753B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
