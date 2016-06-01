@@ -31,6 +31,7 @@
 		841A974B1CFE857A004D753B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A974A1CFE857A004D753B /* MBProgressHUD.m */; };
 		841A974F1CFE8587004D753B /* SHLUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A974E1CFE8587004D753B /* SHLUILabel.m */; };
 		841A97511CFE86C3004D753B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841A97501CFE86C3004D753B /* Assets.xcassets */; };
+		841A97541CFEAEB7004D753B /* WXSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97531CFEAEB7004D753B /* WXSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		841A974D1CFE8587004D753B /* SHLUILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHLUILabel.h; sourceTree = "<group>"; };
 		841A974E1CFE8587004D753B /* SHLUILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHLUILabel.m; sourceTree = "<group>"; };
 		841A97501CFE86C3004D753B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		841A97521CFEAEB7004D753B /* WXSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSearchBar.h; sourceTree = "<group>"; };
+		841A97531CFEAEB7004D753B /* WXSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +278,8 @@
 		841A95DF1CFDB45C004D753B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				841A97521CFEAEB7004D753B /* WXSearchBar.h */,
+				841A97531CFEAEB7004D753B /* WXSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -614,6 +619,7 @@
 				841A97471CFE7D6C004D753B /* WXDiscoverViewController.m in Sources */,
 				841A97421CFE7CB5004D753B /* UILabel+WXStringFrame.m in Sources */,
 				841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */,
+				841A97541CFEAEB7004D753B /* WXSearchBar.m in Sources */,
 				841A95FC1CFDB45D004D753B /* ViewController.m in Sources */,
 				841A974B1CFE857A004D753B /* MBProgressHUD.m in Sources */,
 				841A97411CFE7CB5004D753B /* MViewUtil.m in Sources */,

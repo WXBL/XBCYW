@@ -8,7 +8,14 @@
 
 #import "WXHomeViewController.h"
 
-@interface WXHomeViewController ()
+#import "WXSearchBar.h"
+#import "UIView+Extension.h"
+
+
+@interface WXHomeViewController ()<UITextFieldDelegate>
+
+@property (nonatomic,strong)WXSearchBar *searchBar;
+
 
 @end
 
@@ -18,6 +25,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
+    
+    self.searchBar = [WXSearchBar searchBar];
+    self.searchBar.delegate = self;
+    
+    [self.navigationController.navigationBar addSubview:self.searchBar];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,20 +10,20 @@
 #define Xbcyw_pch
 
 
-//////屏幕宽高
-//#define screenWidth [[UIScreen mainScreen] bounds].size.width
-//#define screenHeigth [[UIScreen mainScreen] bounds].size.height
+////屏幕宽高
+#define screenWidth [[UIScreen mainScreen] bounds].size.width
+#define screenHeigth [[UIScreen mainScreen] bounds].size.height
 
-// 主屏幕大小
-//#define WXMainScreenBounds [UIScreen mainScreen].bounds
+ //主屏幕大小
+#define WXMainScreenBounds [UIScreen mainScreen].bounds
 
 //app主窗口
-//#define WXKeyWindow [UIApplication sharedApplication].keyWindow
-//
-////接口
-//#define BASE_SERVICE_URL @""
-//
-////APP版本
-//#define kVersionId               [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define WXKeyWindow [UIApplication sharedApplication].keyWindow
+
+//接口
+#define BASE_SERVICE_URL @""
+
+//APP版本
+#define kVersionId               [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
 #endif /* Xbcyw_pch */
