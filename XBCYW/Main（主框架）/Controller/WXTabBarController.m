@@ -8,9 +8,9 @@
 
 #import "WXTabBarController.h"
 #import "WXHomeViewController.h"
-#import "WXSuppliesViewController.h"
+#import "WXDelicacyViewController.h"
 #import "WXDiscoverViewController.h"
-#import "WXSearchViewController.h"
+#import "WXBusinessViewController.h"
 #import "WXMoreViewController.h"
 #import "WXNavigationController.h"
 #import "MDDataBaseUtil.h"
@@ -48,16 +48,16 @@
 //    home.newsListArray=self.newsMutableArray;
     [self addChildVc:home title:@"资讯" image:@"tabbar_home" selectedImage:@"tabbar_home_selected"];
     
-    WXSuppliesViewController *supplies = [[WXSuppliesViewController alloc]init];
+    WXDelicacyViewController *delicacy = [[WXDelicacyViewController alloc]init];
 
-    [self addChildVc:supplies title:@"供应"  image:@"tabbar_message_center" selectedImage:@"tabbar_message_center_selected"];
+    [self addChildVc:delicacy title:@"美食"  image:@"tabbar_message_center" selectedImage:@"tabbar_message_center_selected"];
     
     WXDiscoverViewController *discover = [[WXDiscoverViewController alloc]init];
     [self addChildVc:discover title:@"发现" image:@"tabbar_home" selectedImage:@"tabbar_home_selected"];
     
 
-    WXSearchViewController *search = [[WXSearchViewController alloc]init];
-    [self addChildVc:search title:@"搜索" image:@"tabbar_profile" selectedImage:@"tabbar_profile_selected"];
+    WXBusinessViewController *business = [[WXBusinessViewController alloc]init];
+    [self addChildVc:business title:@"商家" image:@"tabbar_profile" selectedImage:@"tabbar_profile_selected"];
 
     WXMoreViewController *more = [[WXMoreViewController alloc]init];
     [self addChildVc:more title:@"更多" image:@"tabbar_profile" selectedImage:@"tabbar_profile_selected"];

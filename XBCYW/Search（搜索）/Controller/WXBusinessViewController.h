@@ -1,5 +1,5 @@
 //
-//  WXSuppliesViewController.h
+//  WXSearchViewController.h
 //  XBCYW
 //
 //  Created by admin on 16/6/1.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WXSuppliesViewController : UIViewController
+@interface WXBusinessViewController : UIViewController
 
 @end

@@ -1,24 +1,24 @@
 //
-//  WXSuppliesViewController.m
+//  WXSearchViewController.m
 //  XBCYW
 //
 //  Created by admin on 16/6/1.
 //  Copyright © 2016年 admin. All rights reserved.
 //
 
-#import "WXSuppliesViewController.h"
+#import "WXBusinessViewController.h"
 
-@interface WXSuppliesViewController ()
+@interface WXBusinessViewController ()
 
 @end
 
-@implementation WXSuppliesViewController
+@implementation WXBusinessViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-     self.view.backgroundColor = [UIColor orangeColor];
+     self.view.backgroundColor = [UIColor grayColor];
 }
 
 - (void)didReceiveMemoryWarning {

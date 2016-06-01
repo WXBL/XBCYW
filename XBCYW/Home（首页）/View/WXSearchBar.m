@@ -21,7 +21,7 @@
         [self.layer setCornerRadius:5.0];
         self.borderStyle = UITextBorderStyleRoundedRect;
         [self.layer setBorderWidth:1];
-        [self.layer setBorderColor:[[UIColor grayColor]CGColor]];
+        [self.layer setBorderColor:[[UIColor colorWithWhite:0.9 alpha:1]CGColor]];
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         self.clearButtonMode = UITextFieldViewModeWhileEditing;
         self.keyboardType = UIKeyboardTypeDefault;
@@ -41,7 +41,7 @@
 
 -(instancetype)init{
     
-    CGFloat width = WXMainScreenBounds.size.width - 100;
+    CGFloat width = WXMainScreenBounds.size.width - 110;
     CGFloat height = 30;
     CGFloat X = screenWidth - width -20;
     CGFloat Y = 7;

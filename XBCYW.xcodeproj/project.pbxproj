@@ -19,8 +19,8 @@
 		841A96101CFE7287004D753B /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960D1CFE7287004D753B /* WXNavigationController.m */; };
 		841A96111CFE7287004D753B /* WXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960F1CFE7287004D753B /* WXTabBarController.m */; };
 		841A96141CFE72EB004D753B /* WXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96131CFE72EB004D753B /* WXHomeViewController.m */; };
-		841A96171CFE77AA004D753B /* WXSuppliesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96161CFE77AA004D753B /* WXSuppliesViewController.m */; };
-		841A961A1CFE7A20004D753B /* WXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96191CFE7A20004D753B /* WXSearchViewController.m */; };
+		841A96171CFE77AA004D753B /* WXDelicacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96161CFE77AA004D753B /* WXDelicacyViewController.m */; };
+		841A961A1CFE7A20004D753B /* WXBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96191CFE7A20004D753B /* WXBusinessViewController.m */; };
 		841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96221CFE7B16004D753B /* WXMoreViewController.m */; };
 		841A97401CFE7CB5004D753B /* MDDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97371CFE7CB5004D753B /* MDDataBaseUtil.m */; };
 		841A97411CFE7CB5004D753B /* MViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97391CFE7CB5004D753B /* MViewUtil.m */; };
@@ -75,10 +75,10 @@
 		841A960F1CFE7287004D753B /* WXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabBarController.m; sourceTree = "<group>"; };
 		841A96121CFE72EB004D753B /* WXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeViewController.h; sourceTree = "<group>"; };
 		841A96131CFE72EB004D753B /* WXHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeViewController.m; sourceTree = "<group>"; };
-		841A96151CFE77AA004D753B /* WXSuppliesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXSuppliesViewController.h; path = ../WXSuppliesViewController.h; sourceTree = "<group>"; };
-		841A96161CFE77AA004D753B /* WXSuppliesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXSuppliesViewController.m; path = ../WXSuppliesViewController.m; sourceTree = "<group>"; };
-		841A96181CFE7A20004D753B /* WXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSearchViewController.h; sourceTree = "<group>"; };
-		841A96191CFE7A20004D753B /* WXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSearchViewController.m; sourceTree = "<group>"; };
+		841A96151CFE77AA004D753B /* WXDelicacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDelicacyViewController.h; path = ../WXDelicacyViewController.h; sourceTree = "<group>"; };
+		841A96161CFE77AA004D753B /* WXDelicacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDelicacyViewController.m; path = ../WXDelicacyViewController.m; sourceTree = "<group>"; };
+		841A96181CFE7A20004D753B /* WXBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXBusinessViewController.h; sourceTree = "<group>"; };
+		841A96191CFE7A20004D753B /* WXBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXBusinessViewController.m; sourceTree = "<group>"; };
 		841A96211CFE7B16004D753B /* WXMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMoreViewController.h; sourceTree = "<group>"; };
 		841A96221CFE7B16004D753B /* WXMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMoreViewController.m; sourceTree = "<group>"; };
 		841A96241CFE7B59004D753B /* Xbcyw.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Xbcyw.pch; sourceTree = "<group>"; };
@@ -153,12 +153,12 @@
 			children = (
 				841A95E61CFDB45C004D753B /* NewFeature（新特性） */,
 				841A95DA1CFDB45C004D753B /* FrameWork */,
-				841A95E21CFDB45C004D753B /* Main（主框架） */,
 				841A95DB1CFDB45C004D753B /* Headers（头文件） */,
+				841A95E21CFDB45C004D753B /* Main（主框架） */,
 				841A95DC1CFDB45C004D753B /* Home（首页） */,
 				841A95D61CFDB45C004D753B /* Supplies（供应） */,
 				841A95E71CFDB45C004D753B /* discover(发现) */,
-				841A95F11CFDB45C004D753B /* Search（搜索） */,
+				841A95F11CFDB45C004D753B /* Business(商家) */,
 				841A961D1CFE7B00004D753B /* More(更多) */,
 				841A95EB1CFDB45C004D753B /* others */,
 				841A95F01CFDB45C004D753B /* Resource */,
@@ -212,8 +212,8 @@
 		841A95D71CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				841A96151CFE77AA004D753B /* WXSuppliesViewController.h */,
-				841A96161CFE77AA004D753B /* WXSuppliesViewController.m */,
+				841A96151CFE77AA004D753B /* WXDelicacyViewController.h */,
+				841A96161CFE77AA004D753B /* WXDelicacyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -380,21 +380,22 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		841A95F11CFDB45C004D753B /* Search（搜索） */ = {
+		841A95F11CFDB45C004D753B /* Business(商家) */ = {
 			isa = PBXGroup;
 			children = (
 				841A95F21CFDB45C004D753B /* Controller */,
 				841A95F31CFDB45C004D753B /* Model */,
 				841A95F41CFDB45D004D753B /* View */,
 			);
+			name = "Business(商家)";
 			path = "Search（搜索）";
 			sourceTree = "<group>";
 		};
 		841A95F21CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				841A96181CFE7A20004D753B /* WXSearchViewController.h */,
-				841A96191CFE7A20004D753B /* WXSearchViewController.m */,
+				841A96181CFE7A20004D753B /* WXBusinessViewController.h */,
+				841A96191CFE7A20004D753B /* WXBusinessViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -613,7 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841A96171CFE77AA004D753B /* WXSuppliesViewController.m in Sources */,
+				841A96171CFE77AA004D753B /* WXDelicacyViewController.m in Sources */,
 				841A96111CFE7287004D753B /* WXTabBarController.m in Sources */,
 				841A97441CFE7CB5004D753B /* WXTopView.m in Sources */,
 				841A97471CFE7D6C004D753B /* WXDiscoverViewController.m in Sources */,
@@ -631,7 +632,7 @@
 				841A97431CFE7CB5004D753B /* validateTest.m in Sources */,
 				841A95FB1CFDB45D004D753B /* AppDelegate.m in Sources */,
 				841A96141CFE72EB004D753B /* WXHomeViewController.m in Sources */,
-				841A961A1CFE7A20004D753B /* WXSearchViewController.m in Sources */,
+				841A961A1CFE7A20004D753B /* WXBusinessViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -743,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -764,6 +765,7 @@
 				);
 				GCC_PREFIX_HEADER = "XBCYW/Headers（头文件）/Xbcyw.pch";
 				INFOPLIST_FILE = XBCYW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -789,6 +791,7 @@
 				);
 				GCC_PREFIX_HEADER = "XBCYW/Headers（头文件）/Xbcyw.pch";
 				INFOPLIST_FILE = XBCYW/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
