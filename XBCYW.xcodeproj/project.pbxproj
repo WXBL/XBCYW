@@ -22,6 +22,7 @@
 		792025691D067615002F1FFB /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7920255E1D067615002F1FFB /* AFURLRequestSerialization.m */; };
 		7920256A1D067615002F1FFB /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025601D067615002F1FFB /* AFURLResponseSerialization.m */; };
 		7920256B1D067615002F1FFB /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025621D067615002F1FFB /* AFURLSessionManager.m */; };
+		792025771D06C158002F1FFB /* WXDelicacyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025761D06C158002F1FFB /* WXDelicacyDetailViewController.m */; };
 		79DE35131CFECDEA00BBD57D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE35121CFECDEA00BBD57D /* nav_bg.png */; };
 		841A95B51CFDAEDA004D753B /* XBCYWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95B41CFDAEDA004D753B /* XBCYWTests.m */; };
 		841A95C01CFDAEDA004D753B /* XBCYWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95BF1CFDAEDA004D753B /* XBCYWUITests.m */; };
@@ -104,6 +105,8 @@
 		792025601D067615002F1FFB /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		792025611D067615002F1FFB /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		792025621D067615002F1FFB /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		792025751D06C158002F1FFB /* WXDelicacyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDelicacyDetailViewController.h; path = "XBCYW/Delicacy（美食）/WXDelicacyDetailViewController.h"; sourceTree = SOURCE_ROOT; };
+		792025761D06C158002F1FFB /* WXDelicacyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDelicacyDetailViewController.m; path = "XBCYW/Delicacy（美食）/WXDelicacyDetailViewController.m"; sourceTree = SOURCE_ROOT; };
 		79DE35121CFECDEA00BBD57D /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg.png; sourceTree = "<group>"; };
 		841A95971CFDAED9004D753B /* XBCYW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XBCYW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A95B01CFDAEDA004D753B /* XBCYWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XBCYWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,6 +321,8 @@
 			children = (
 				7920253C1D0654A7002F1FFB /* WXDelicacyViewController.h */,
 				7920253D1D0654A7002F1FFB /* WXDelicacyViewController.m */,
+				792025751D06C158002F1FFB /* WXDelicacyDetailViewController.h */,
+				792025761D06C158002F1FFB /* WXDelicacyDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -773,6 +778,7 @@
 				841A96101CFE7287004D753B /* WXNavigationController.m in Sources */,
 				792025661D067615002F1FFB /* AFNetworkReachabilityManager.m in Sources */,
 				792025451D066E37002F1FFB /* WXMerchantModel.m in Sources */,
+				792025771D06C158002F1FFB /* WXDelicacyDetailViewController.m in Sources */,
 				792025651D067615002F1FFB /* AFHTTPSessionManager.m in Sources */,
 				792025691D067615002F1FFB /* AFURLRequestSerialization.m in Sources */,
 				841A960B1CFE726C004D753B /* UIView+Extension.m in Sources */,
