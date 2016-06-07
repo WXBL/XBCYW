@@ -10,4 +10,10 @@
 
 @interface WXHomeTableViewCell : UITableViewCell
 
+@property (nonatomic,strong)UIImageView *image1;
+@property (nonatomic,strong)UIImageView *image2;
+@property (nonatomic,strong)UILabel *titleLabel1;
+@property (nonatomic,strong)UILabel *titleLabel2;
+@property (nonatomic,strong)UILabel *detailLabel;
+
 @end

@@ -11,6 +11,7 @@
 #import "WXSearchBar.h"
 #import "UIView+Extension.h"
 #import "MBProgressHUD.h"
+#import "WXHomeTableViewCell.h"
 
 @interface WXHomeViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -26,6 +27,13 @@
 @property (nonatomic,strong)UIScrollView *scrollView;
 @property (nonatomic,strong)UIPageControl *pageControl;
 @property (nonatomic,strong)NSTimer *timer;
+
+@property (nonatomic,strong)UIView *menuView;
+@property (nonatomic,strong)UIButton *headlineBtn;//头条
+@property (nonatomic,strong)UIButton *newsBtn;//新闻
+@property (nonatomic,strong)UIButton *dynamicBtn;//动态
+
+@property (nonatomic,strong)UITapGestureRecognizer *dismissMenuView;
 @end
 
 @implementation WXHomeViewController
@@ -109,6 +117,19 @@
     
     [self setCarousel];
     
+//    self.menuView.hidden =YES;
+//    [self.view bringSubviewToFront:self.menuView];
+    self.dismissMenuView = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(menuView:)];
+    [self.view addGestureRecognizer:self.dismissMenuView];
+    self.dismissMenuView.enabled = NO;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self setCategoryView];
+    
 }
 
 -(void)addNavLeftCategoryButton{
@@ -126,6 +147,7 @@
 //    [self.categoryBtn.layer setBorderColor:colorref];//边框颜色
     self.categoryBtn.backgroundColor = [UIColor colorWithRed:0.2 green:0.7 blue:0.4 alpha:1];
     self.categoryBtn.layer.borderColor = [UIColor colorWithWhite:0.9 alpha:1].CGColor;
+    [self.categoryBtn addTarget:self action:@selector(ClickCategory:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.navigationController.navigationBar addSubview:self.categoryBtn];
 }
@@ -138,6 +160,76 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];//隐藏cell的分割线
     [self.view addSubview:self.tableView];
     
+}
+
+#pragma mark -创建分类菜单
+-(void)setCategoryView{
+    //创建分类菜单view
+    self.menuView = [[UIView alloc]initWithFrame:CGRectMake(5, 0, screenWidth*0.3, screenHeigth*0.2)];
+    self.menuView.backgroundColor = [UIColor colorWithWhite:0.4 alpha:0.7];
+    [self.menuView setHidden:YES];
+    [self.view addSubview:self.menuView];
+
+    
+    self.headlineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.headlineBtn.frame = CGRectMake(10, 10, self.menuView.frame.size.width -20, self.menuView.frame.size.height *0.3);
+    [self.headlineBtn setTitle:@"资讯头条" forState:UIControlStateNormal];
+    [self.headlineBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.headlineBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.headlineBtn.tag =100;
+    [self.headlineBtn addTarget:self action:@selector(ClickMenuBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.menuView addSubview:self.headlineBtn];
+    
+    self.newsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.newsBtn.frame = CGRectMake(10, CGRectGetMaxY(self.headlineBtn.frame), self.menuView.frame.size.width -20, self.menuView.frame.size.height *0.3);
+    [self.newsBtn setTitle:@"新闻资讯" forState:UIControlStateNormal];
+    [self.newsBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.newsBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.newsBtn.tag =101;
+    [self.newsBtn addTarget:self action:@selector(ClickMenuBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.menuView addSubview:self.newsBtn];
+    
+    self.dynamicBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.dynamicBtn.frame = CGRectMake(10, CGRectGetMaxY(self.newsBtn.frame), self.menuView.frame.size.width -20, self.menuView.frame.size.height *0.3);
+    [self.dynamicBtn setTitle:@"最新动态" forState:UIControlStateNormal];
+    [self.dynamicBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.dynamicBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.dynamicBtn.tag = 102;
+    [self.dynamicBtn addTarget:self action:@selector(ClickMenuBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.menuView addSubview:self.dynamicBtn];
+}
+
+/**
+ 菜单显示，隐藏
+ */
+-(void)menuView:(id)sender{
+    self.menuView.hidden = YES;
+    self.dismissMenuView.enabled = NO;
+}
+
+#pragma mark -点击分类按钮触发事件
+-(void)ClickCategory:(UIButton *)sender{
+    
+    
+    if (self.menuView.hidden ==YES) {
+        [self.menuView setHidden:NO];
+        [UIView animateWithDuration:0.1 animations:^{}completion:^(BOOL finished){
+            self.dismissMenuView.enabled = YES;
+        }];
+    }else{
+        [self.menuView setHidden:YES];
+        self.dismissMenuView.enabled = NO;
+    }
+    
+    
+//    [categoryView bringSubviewToFront:self.view];
+}
+
+-(void)ClickMenuBtn:(UIButton *)sender{
+    [self.menuView setHidden:YES];
+    if (sender.tag ==100) {
+        
+    }
 }
 
 #pragma mark - UIScrollView实现轮播
@@ -308,10 +400,13 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId = @"newsCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    WXHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[WXHomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
+    
+    
+    
     return cell;
 }
 
@@ -320,7 +415,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 180;
 }
 
 - (void)didReceiveMemoryWarning {
