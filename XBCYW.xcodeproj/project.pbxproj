@@ -33,6 +33,10 @@
 		841A974F1CFE8587004D753B /* SHLUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A974E1CFE8587004D753B /* SHLUILabel.m */; };
 		841A97511CFE86C3004D753B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841A97501CFE86C3004D753B /* Assets.xcassets */; };
 		841A97541CFEAEB7004D753B /* WXSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97531CFEAEB7004D753B /* WXSearchBar.m */; };
+		841A97571CFEDB8B004D753B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A97561CFEDB8B004D753B /* 1.jpg */; };
+		841A975A1CFEDD42004D753B /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A97581CFEDD42004D753B /* 3.jpg */; };
+		841A975B1CFEDD42004D753B /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A97591CFEDD42004D753B /* 2.jpg */; };
+		841A975E1CFEE5D7004D753B /* WXHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A975D1CFEE5D7004D753B /* WXHomeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,11 @@
 		841A97501CFE86C3004D753B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841A97521CFEAEB7004D753B /* WXSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSearchBar.h; sourceTree = "<group>"; };
 		841A97531CFEAEB7004D753B /* WXSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXSearchBar.m; sourceTree = "<group>"; };
+		841A97561CFEDB8B004D753B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		841A97581CFEDD42004D753B /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		841A97591CFEDD42004D753B /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		841A975C1CFEE5D7004D753B /* WXHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeTableViewCell.h; sourceTree = "<group>"; };
+		841A975D1CFEE5D7004D753B /* WXHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +167,7 @@
 				841A95DB1CFDB45C004D753B /* Headers（头文件） */,
 				841A95E21CFDB45C004D753B /* Main（主框架） */,
 				841A95DC1CFDB45C004D753B /* Home（首页） */,
-				841A95D61CFDB45C004D753B /* Supplies（供应） */,
+				841A95D61CFDB45C004D753B /* Delicacy(美食) */,
 				841A95E71CFDB45C004D753B /* discover(发现) */,
 				841A95F11CFDB45C004D753B /* Business(商家) */,
 				841A961D1CFE7B00004D753B /* More(更多) */,
@@ -200,14 +209,14 @@
 			path = XBCYWUITests;
 			sourceTree = "<group>";
 		};
-		841A95D61CFDB45C004D753B /* Supplies（供应） */ = {
+		841A95D61CFDB45C004D753B /* Delicacy(美食) */ = {
 			isa = PBXGroup;
 			children = (
 				841A95D71CFDB45C004D753B /* Controller */,
 				841A95D81CFDB45C004D753B /* Model */,
 				841A95D91CFDB45C004D753B /* View */,
 			);
-			name = "Supplies（供应）";
+			name = "Delicacy(美食)";
 			path = "Delicacy（美食）";
 			sourceTree = "<group>";
 		};
@@ -282,6 +291,8 @@
 			children = (
 				841A97521CFEAEB7004D753B /* WXSearchBar.h */,
 				841A97531CFEAEB7004D753B /* WXSearchBar.m */,
+				841A975C1CFEE5D7004D753B /* WXHomeTableViewCell.h */,
+				841A975D1CFEE5D7004D753B /* WXHomeTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,6 +390,7 @@
 		841A95F01CFDB45C004D753B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				841A97551CFEDB61004D753B /* Carousel(轮播图片) */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -483,6 +495,16 @@
 				841A974E1CFE8587004D753B /* SHLUILabel.m */,
 			);
 			path = SHLUILabel;
+			sourceTree = "<group>";
+		};
+		841A97551CFEDB61004D753B /* Carousel(轮播图片) */ = {
+			isa = PBXGroup;
+			children = (
+				841A97581CFEDD42004D753B /* 3.jpg */,
+				841A97591CFEDD42004D753B /* 2.jpg */,
+				841A97561CFEDB8B004D753B /* 1.jpg */,
+			);
+			name = "Carousel(轮播图片)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -592,8 +614,11 @@
 				79DE35131CFECDEA00BBD57D /* nav_bg.png in Resources */,
 				841A96081CFDB59B004D753B /* Main.storyboard in Resources */,
 				841A96021CFDB4F4004D753B /* Info.plist in Resources */,
+				841A975B1CFEDD42004D753B /* 2.jpg in Resources */,
 				841A97511CFE86C3004D753B /* Assets.xcassets in Resources */,
+				841A975A1CFEDD42004D753B /* 3.jpg in Resources */,
 				841A96071CFDB59B004D753B /* LaunchScreen.storyboard in Resources */,
+				841A97571CFEDB8B004D753B /* 1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +646,7 @@
 				841A96171CFE77AA004D753B /* WXDelicacyViewController.m in Sources */,
 				841A96111CFE7287004D753B /* WXTabBarController.m in Sources */,
 				841A97441CFE7CB5004D753B /* WXTopView.m in Sources */,
+				841A975E1CFEE5D7004D753B /* WXHomeTableViewCell.m in Sources */,
 				841A97471CFE7D6C004D753B /* WXDiscoverViewController.m in Sources */,
 				841A97421CFE7CB5004D753B /* UILabel+WXStringFrame.m in Sources */,
 				841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */,
