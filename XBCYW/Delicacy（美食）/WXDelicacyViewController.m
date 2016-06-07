@@ -194,6 +194,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.categoryTableView.hidden=YES;
     if (tableView==self.categoryTableView) {
         self.typeModel=[self.categoryArr objectAtIndex:indexPath.row];
         [self searchWithSearchKey:@"Goods_TypeName" SearchValue:self.typeModel.Type_Name];
