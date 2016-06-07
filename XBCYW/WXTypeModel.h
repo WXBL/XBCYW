@@ -17,4 +17,5 @@
 
 -(id)getTypeDataWithDictionaryWithJSON:(NSDictionary *)dict;
 -(id)getTypeDataWithArrayJSON:(NSArray *)array;
+
 @end

@@ -12,6 +12,7 @@
 #import "UIView+Extension.h"
 #import "MBProgressHUD.h"
 #import "WXHomeTableViewCell.h"
+#import "WJRefresh.h"
 
 @interface WXHomeViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -33,7 +34,10 @@
 @property (nonatomic,strong)UIButton *newsBtn;//新闻
 @property (nonatomic,strong)UIButton *dynamicBtn;//动态
 
+//添加手势
 @property (nonatomic,strong)UITapGestureRecognizer *dismissMenuView;
+
+@property (nonatomic,strong)WJRefresh *refresh;
 @end
 
 @implementation WXHomeViewController
@@ -153,13 +157,50 @@
 }
 
 -(void)addTableView{
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeigth) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeigth-self.navigationController.navigationBar.frame.size.height-self.tabBarController.tabBar.frame.size.height-20) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];//隐藏cell的分割线
     [self.view addSubview:self.tableView];
     
+    
+    //初始化控件
+    _refresh = [[WJRefresh alloc]init];
+    __weak typeof(self)weakSelf = self;
+    [_refresh addHeardRefreshTo:self.tableView heardBlock:^{
+        [weakSelf createHeaderData];
+    }footBlok:^{
+        [weakSelf createFootData];
+    }];
+    [_refresh beginHeardRefresh];
+}
+
+//头部刷新数据
+-(void)createHeaderData{
+   
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.currentNewsArray removeAllObjects];
+        self.currentNewsArray = [NSMutableArray array];
+        if (self.currentNewsArray.count<11) {
+            
+        }
+        [self.tableView reloadData];
+        [_refresh endRefresh];
+   
+    });
+}
+
+//尾部刷新
+-(void)createFootData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.currentNewsArray.count) {
+            
+        }
+        [self.tableView reloadData];
+        [_refresh endRefresh];
+    });
 }
 
 #pragma mark -创建分类菜单
@@ -394,7 +435,7 @@
     if (self.currentNewsArray.count>10) {
         return 11;
     }else{
-        return self.currentNewsArray.count+1;
+        return self.currentNewsArray.count+5;
     }
 }
 

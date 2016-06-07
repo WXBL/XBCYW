@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XBCYW/Home&#xff08;&#x9996;&#x9875;&#xff09;/Controller/WXHomeViewController.m"
-            timestampString = "486960944.3067"
+            timestampString = "486977552.751582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "-ClickCategory:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XBCYW/Home&#xff08;&#x9996;&#x9875;&#xff09;/Controller/WXHomeViewController.m"
-            timestampString = "486960944.3067"
+            timestampString = "486977552.751582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "-ClickCategory:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XBCYW/Home&#xff08;&#x9996;&#x9875;&#xff09;/View/WXHomeTableViewCell.m"
-            timestampString = "486960980.03219"
+            timestampString = "486983196.377303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "-addSubviews"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XBCYW/Home&#xff08;&#x9996;&#x9875;&#xff09;/View/WXHomeTableViewCell.m"
-            timestampString = "486971431.231597"
+            timestampString = "486983509.927948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-addSubviews"
             landmarkType = "5">
          </BreakpointContent>

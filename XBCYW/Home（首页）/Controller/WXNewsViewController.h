@@ -1,13 +1,13 @@
 //
-//  WXNewsModel.m
+//  WXNewsViewController.h
 //  XBCYW
 //
 //  Created by admin on 16/6/7.
 //  Copyright © 2016年 admin. All rights reserved.
 //
 
-#import "WXNewsModel.h"
+#import <UIKit/UIKit.h>
 
-@implementation WXNewsModel
+@interface WXNewsViewController : UIViewController
 
 @end
