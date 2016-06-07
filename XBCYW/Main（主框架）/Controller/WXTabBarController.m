@@ -41,8 +41,16 @@
     [super viewDidLoad];
 //    [self setNewsData];
     
-    self.tabBar.backgroundColor = [UIColor redColor];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor redColor]}  forState:UIControlStateSelected];
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:18]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -10)];
+    
 //    self.tabBar.alpha = 1;
+    UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, CGRectGetHeight(self.view.frame))];
+    backView.backgroundColor = [UIColor blackColor];
+    [self.tabBar insertSubview:backView atIndex:0];
+    self.tabBar.opaque = YES;
     //1.初始化字控制器
     WXHomeViewController *home = [[WXHomeViewController alloc]init];
 //    home.newsListArray=self.newsMutableArray;
@@ -79,20 +87,21 @@
     
     //设置字控制器的文字
     childVc.title = title;
-    //    childVc.tabBarItem.title = title;
-    //    childVc.navigationItem.title = title;
+    
+        childVc.tabBarItem.title = title;
+//        childVc.navigationItem.title = title;
     
     //设置字控制器的图片
-    childVc.tabBarItem.image = [UIImage imageNamed:image];
-    childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    childVc.tabBarItem.image = [UIImage imageNamed:image];
+//    childVc.tabBarItem.selectedImage = [[UIImage imageNamed:selectImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     //设置文字的样式
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.7 green:0.3 blue:0.3 alpha:1];
-    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
-    selectTextAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    [childVc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    [childVc.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
+//    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+//    textAttrs[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.7 green:0.3 blue:0.3 alpha:1];
+//    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
+//    selectTextAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
+//    [childVc.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+//    [childVc.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
     
     
     

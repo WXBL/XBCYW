@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79DE35131CFECDEA00BBD57D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE35121CFECDEA00BBD57D /* nav_bg.png */; };
 		841A95B51CFDAEDA004D753B /* XBCYWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95B41CFDAEDA004D753B /* XBCYWTests.m */; };
 		841A95C01CFDAEDA004D753B /* XBCYWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95BF1CFDAEDA004D753B /* XBCYWUITests.m */; };
 		841A95FB1CFDB45D004D753B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95ED1CFDB45C004D753B /* AppDelegate.m */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79DE35121CFECDEA00BBD57D /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg.png; sourceTree = "<group>"; };
 		841A95971CFDAED9004D753B /* XBCYW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XBCYW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A95B01CFDAEDA004D753B /* XBCYWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XBCYWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A95B41CFDAEDA004D753B /* XBCYWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBCYWTests.m; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 		841A95EB1CFDB45C004D753B /* others */ = {
 			isa = PBXGroup;
 			children = (
+				79DE35121CFECDEA00BBD57D /* nav_bg.png */,
 				841A95EC1CFDB45C004D753B /* AppDelegate.h */,
 				841A95ED1CFDB45C004D753B /* AppDelegate.m */,
 				841A95EE1CFDB45C004D753B /* ViewController.h */,
@@ -586,6 +589,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DE35131CFECDEA00BBD57D /* nav_bg.png in Resources */,
 				841A96081CFDB59B004D753B /* Main.storyboard in Resources */,
 				841A96021CFDB4F4004D753B /* Info.plist in Resources */,
 				841A97511CFE86C3004D753B /* Assets.xcassets in Resources */,
