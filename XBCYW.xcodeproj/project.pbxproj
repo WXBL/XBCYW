@@ -166,8 +166,8 @@
 		84600E5E1D07A4E500699ADD /* WJRefreshArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WJRefreshArrow@2x.png"; sourceTree = "<group>"; };
 		84600E611D07A57900699ADD /* WXNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNewsViewController.h; sourceTree = "<group>"; };
 		84600E621D07A57900699ADD /* WXNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNewsViewController.m; sourceTree = "<group>"; };
-		84600E661D07A5E800699ADD /* WXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeViewController.h; sourceTree = "<group>"; };
 		84600E671D07A5E800699ADD /* WXHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeViewController.m; sourceTree = "<group>"; };
+		84600E691D07AC3800699ADD /* WXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,7 +360,7 @@
 		841A95DD1CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84600E661D07A5E800699ADD /* WXHomeViewController.h */,
+				84600E691D07AC3800699ADD /* WXHomeViewController.h */,
 				84600E671D07A5E800699ADD /* WXHomeViewController.m */,
 				84600E611D07A57900699ADD /* WXNewsViewController.h */,
 				84600E621D07A57900699ADD /* WXNewsViewController.m */,

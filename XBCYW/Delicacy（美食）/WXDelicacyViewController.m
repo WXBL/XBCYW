@@ -15,7 +15,6 @@
 #import "WXProductModel.h"
 #import "WXImageModel.h"
 #import "WXDelicacyDetailViewController.h"
-#define GET_GOODSCATEGORY_LIST_URL @""
 @interface WXDelicacyViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)WXSearchBar *searchBar;
 @property(nonatomic,strong)UIButton *timeBtn;
@@ -54,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self addData];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.searchBar=[WXSearchBar searchBar];
     [self.navigationController.navigationBar addSubview:self.searchBar];
@@ -119,10 +118,6 @@
     self.categoryTableView.dataSource=self;
     
 }
--(void)addData{
-    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
-    NSString *path=[NSString stringWithFormat:@"%@%@",BASE_SERVICE_URL,GET_GOODSCATEGORY_LIST_URL];
-}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView==self.categoryTableView) {
         return 44;
@@ -134,9 +129,11 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView==self.productTableView) {
-        return self.currentArr.count;
+//        return self.currentArr.count;
+        return 6;
     }else if (tableView==self.categoryTableView){
-        return self.categoryArr.count;
+//        return self.categoryArr.count;
+        return 10;
     }
     return 0;
 }
@@ -149,25 +146,24 @@
         if (cell==nil) {
             cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         }
-        self.typeModel=[self.categoryArr objectAtIndex:indexPath.row];
-        cell.textLabel.text=self.typeModel.Type_Name;
-//        cell.textLabel.text=@"a";
+//        self.typeModel=[self.categoryArr objectAtIndex:indexPath.row];
+//        cell.textLabel.text=self.typeModel.Type_Name;
+        cell.textLabel.text=@"a";
         cell.backgroundView.alpha=0.5;
     }else if(tableView==self.productTableView){
         cell=[tableView dequeueReusableCellWithIdentifier:cellID1];
         if (cell==nil) {
             cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID1];
         }
-        self.productModel=[self.currentArr objectAtIndex:indexPath.row];
-        self.imgModel=[self.productModel.productImgArr firstObject];
-        NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imgModel.Image_ur]];
-        cell.imageView.image=[UIImage imageWithData:data];
-        cell.textLabel.text=self.productModel.Goods_Name;
-        cell.detailTextLabel.text=self.productModel.Goods_Price;
-        cell.detailTextLabel.textColor=[UIColor redColor];
-//        cell.imageView.image=[UIImage imageNamed:@"2.jpg"];
-//        cell.textLabel.text=[NSString stringWithFormat:@"%@%ld",@"西北餐饮网商品",(long)indexPath.row];
-//        cell.detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
+//        self.productModel=[self.currentArr objectAtIndex:indexPath.row];
+//        self.imgModel=[self.productModel.productImgArr firstObject];
+//        NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imgModel.Image_ur]];
+//        cell.imageView.image=[UIImage imageWithData:data];
+//        cell.textLabel.text=self.productModel.Goods_Name;
+//        cell.detailTextLabel.text=self.productModel.Goods_Price;;
+        cell.imageView.image=[UIImage imageNamed:@"2.jpg"];
+        cell.textLabel.text=[NSString stringWithFormat:@"%@%ld",@"西北餐饮网商品",(long)indexPath.row];
+        cell.detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
         
     }
     return cell;
@@ -204,8 +200,8 @@
         [self searchWithSearchKey:@"Goods_TypeName" SearchValue:self.typeModel.Type_Name];
     }else if(tableView==self.productTableView){
         WXDelicacyDetailViewController *detailVC=[[WXDelicacyDetailViewController alloc] init];
-        detailVC.productModel=[self.currentArr objectAtIndex:indexPath.row];
-        [self presentViewController:detailVC animated:YES completion:nil];
+//        detailVC.productModel=[self.currentArr objectAtIndex:indexPath.row];
+        [self.navigationController presentViewController:detailVC animated:YES completion:nil];
     }
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
