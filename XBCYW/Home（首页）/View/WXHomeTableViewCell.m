@@ -28,17 +28,18 @@
 }
 
 -(void)addSubviews{
-    UIView *cellView = [[UIView alloc]init];
-    
-    cellView.frame = CGRectMake(0, 0, screenWidth , 180);
-    cellView.backgroundColor = [UIColor whiteColor];
-    [self addSubview:cellView];
+//    UIView *cellView = [[UIView alloc]init];
+//    
+//    cellView.frame = CGRectMake(0, 0, screenWidth , 180);
+//    cellView.backgroundColor = [UIColor whiteColor];
+//    [self addSubview:cellView];
+    self.frame = CGRectMake(0, 0, screenWidth, 180);
     
     for (int i =0; i<2; i++) {
-        self.newsBtn = [[UIButton alloc]initWithFrame:CGRectMake(i*(cellView.frame.size.width/2)+10, 5, cellView.frame.size.width/2 -20, cellView.frame.size.height/2-5)];
+        self.newsBtn = [[UIButton alloc]initWithFrame:CGRectMake(i*(self.frame.size.width/2)+10, 5, self.frame.size.width/2 -20, self.frame.size.height/2-5)];
         [self.newsBtn setImage:[UIImage imageNamed:@"newsImage1.jpg"] forState:UIControlStateNormal];
         self.newsBtn.tag =i+1;
-        [cellView addSubview:self.newsBtn];
+        [self addSubview:self.newsBtn];
         
         
         UIView *titleBgView = [[UIView alloc]initWithFrame:CGRectMake(0, self.newsBtn.frame.size.height-20, self.newsBtn.frame.size.width, 20)];
@@ -58,20 +59,20 @@
         }
         [self.newsBtn addTarget:self action:@selector(ClickNewsBtn:) forControlEvents:UIControlEventTouchUpInside];
 
+
     }
     
     
-    
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(cellView.frame.size.width/2, 5, 1, self.newsBtn.frame.size.height)];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(self.frame.size.width/2, 5, 1, self.newsBtn.frame.size.height)];
     lineView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
-    [cellView addSubview:lineView];
+    [self addSubview:lineView];
     
     self.newsBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.newsBtn2.frame = CGRectMake(0, cellView.frame.size.height/2, cellView.frame.size.width, cellView.frame.size.height/2);
-    [self.newsBtn addTarget:self action:@selector(ClickNewsBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [cellView addSubview:self.newsBtn2];
+    self.newsBtn2.frame = CGRectMake(0, self.frame.size.height/2, self.frame.size.width, self.frame.size.height/2);
+    [self.newsBtn2 addTarget:self action:@selector(ClickNewsBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.newsBtn2];
     
-    self.titleLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,cellView.frame.size.width,20)];
+    self.titleLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,self.frame.size.width,20)];
     self.titleLabel2.text = @"sdfasdgasdkj;alskdjf;lajksd;lf";
     self.titleLabel2.textColor = [UIColor blackColor];
     self.titleLabel2.textAlignment = NSTextAlignmentLeft;
@@ -92,7 +93,10 @@
     
 }
 
--(void)ClickNewsBtn:(UIButton *)sender{
+-(void)ClickNewsBtn:(UIButton *)button{
+    if ([_delegate respondsToSelector:@selector(WXHomeTableViewCell:didSelectButton:)]) {
+        [_delegate WXHomeTableViewCell:self didSelectButton:button];
+    }
     
 }
 

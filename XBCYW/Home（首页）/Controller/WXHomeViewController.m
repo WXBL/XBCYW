@@ -13,7 +13,9 @@
 #import "MBProgressHUD.h"
 #import "WXHomeTableViewCell.h"
 #import "WJRefresh.h"
-@interface WXHomeViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
+
+#import "WXNewsViewController.h"
+@interface WXHomeViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,WXHomeTableViewCellDelegate>
 
 @property (nonatomic,strong)WXSearchBar *searchBar;
 
@@ -435,6 +437,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId = @"newsCell";
     WXHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    cell.delegate=self;
     if (!cell) {
         cell = [[WXHomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
@@ -452,6 +455,12 @@
     return 180;
 }
 
+
+#pragma mark -点击资讯跳转事件
+-(void)WXHomeTableViewCell:(UITableViewCell *)homeViewCell didSelectButton:(UIButton *)button{
+    WXNewsViewController *homeViewController = [[WXNewsViewController alloc]init];
+    [self presentViewController:homeViewController animated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -12,6 +12,7 @@
 
 @protocol WXHomeTableViewCellDelegate <NSObject>
 
+-(void)WXHomeTableViewCell:(UITableViewCell *)homeViewCell didSelectButton:(UIButton *)button;
 
 @end
 @interface WXHomeTableViewCell : UITableViewCell
