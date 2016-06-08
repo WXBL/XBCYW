@@ -12,6 +12,8 @@
 #import "UIView+Extension.h"
 #import "MBProgressHUD.h"
 #import "WXHomeTableViewCell.h"
+#import "WXNewsTableViewCell.h"
+#import "WXdynamicTableViewCell.h"
 #import "WJRefresh.h"
 
 #import "WXNewsViewController.h"
@@ -24,7 +26,12 @@
 @property (nonatomic,strong)NSMutableArray *filteredNews;
 @property (nonatomic,strong)NSMutableArray *currentNewsArray;
 
-@property (nonatomic,strong)UITableView *tableView;
+@property (nonatomic,strong)NSMutableArray *newsArray;
+@property (nonatomic,strong)NSMutableArray *dynamicArray;
+
+@property (nonatomic,strong)UITableView *tableView;//资讯头条
+@property (nonatomic,strong)UITableView *newsTableView;//新闻资讯
+@property (nonatomic,strong)UITableView *dynamicTableView;//动态
 
 @property (nonatomic,strong)UIScrollView *scrollView;
 @property (nonatomic,strong)UIPageControl *pageControl;
@@ -137,6 +144,10 @@
     }];
     [_refresh beginHeardRefresh];
     
+    
+    [self createNewsTableView];
+    [self creatDynamicTableView];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -176,26 +187,81 @@
     
 }
 
+-(void)createNewsTableView{
+    
+    self.newsTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeigth-100) style:UITableViewStylePlain];
+    self.newsTableView.delegate = self;
+    self.newsTableView.dataSource = self;
+    self.newsTableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    [self.newsTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];//隐藏cell的分割线
+    [self.view addSubview:self.newsTableView];
+    self.newsTableView.hidden = YES;
+}
+
+-(void)creatDynamicTableView{
+    
+    self.dynamicTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeigth-100) style:UITableViewStylePlain];
+    self.dynamicTableView.delegate = self;
+    self.dynamicTableView.dataSource = self;
+    self.dynamicTableView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    [self.dynamicTableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];//隐藏cell的分割线
+    [self.view addSubview:self.dynamicTableView];
+    self.dynamicTableView.hidden = YES;
+}
 #pragma mark -刷新
 -(void)createHeaderData{
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.currentNewsArray removeAllObjects];
-        self.currentNewsArray = [NSMutableArray array];
-        if (self.currentNewsArray.count <11) {
+    if (self.tableView) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.currentNewsArray removeAllObjects];
+            self.currentNewsArray = [NSMutableArray array];
+            if (self.currentNewsArray.count <11) {
+              
+                self.currentNewsArray.count +3;
+            }
+            [self.tableView reloadData];
+            [_refresh endRefresh];
+        });
+
+    }else if (self.newsTableView){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
-        }
-        [self.tableView reloadData];
-        [_refresh endRefresh];
-    });
+            [self.newsTableView reloadData];
+            [_refresh endRefresh];
+        });
+    }else if(self.dynamicTableView){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self.dynamicTableView reloadData];
+            [_refresh endRefresh];
+        });
+    
+    }
+    
 }
 
 -(void)createFootData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+
+    if(self.tableView){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [_refresh endRefresh];
+        });
         
-        [self.tableView reloadData];
-        [_refresh endRefresh];
-    });
+    }else if (self.newsTableView){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.newsTableView reloadData];
+            [_refresh endRefresh];
+        });
+        
+    }else if (self.dynamicTableView){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             [self.dynamicTableView reloadData];
+            [_refresh endRefresh];
+        });
+       
+    }
+   
 }
 
 #pragma mark -创建分类菜单
@@ -264,7 +330,20 @@
 -(void)ClickMenuBtn:(UIButton *)sender{
     [self.menuView setHidden:YES];
     if (sender.tag ==100) {
-        
+        self.tableView.hidden = NO;
+        [self.tableView reloadData];
+        self.newsTableView.hidden = YES;
+        self.dynamicTableView.hidden = YES;
+    }else if(sender.tag ==101){
+        self.newsTableView.hidden = NO;
+        [self.newsTableView reloadData];
+        self.tableView.hidden = YES;
+        self.dynamicTableView.hidden = YES;
+    }else if (sender.tag ==102){
+        self.dynamicTableView.hidden = NO;
+        [self.dynamicTableView reloadData];
+        self.tableView.hidden = YES;
+        self.newsTableView.hidden = YES;
     }
 }
 
@@ -384,6 +463,8 @@
         
     }
     [self.tableView reloadData];
+    [self.newsTableView reloadData];
+    [self.dynamicTableView reloadData];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -427,32 +508,70 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (self.currentNewsArray.count>10) {
-        return 11;
-    }else{
-        return self.currentNewsArray.count+5;
+    if (tableView == self.tableView) {
+        if (self.currentNewsArray.count>10) {
+            return 11;
+        }else{
+            return self.currentNewsArray.count+5;
+        }
+    }else if (tableView == self.newsTableView){
+        return 3;
+//        self.newsArray.count;
+    }else if (tableView == self.dynamicTableView){
+        return 4;
+//        return self.dynamicArray.count;
     }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellId = @"newsCell";
-    WXHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    cell.delegate=self;
-    if (!cell) {
-        cell = [[WXHomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    
+    if (tableView == self.tableView) {
+        static NSString *cellId = @"HeadnewsCell";
+        WXHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        cell.delegate=self;
+        if (!cell) {
+            cell = [[WXHomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+
+         return cell;
+    }else if (tableView == self.newsTableView){
+        static NSString *cellId = @"newsCell";
+        WXNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            cell = [[WXNewsTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        return cell;
+    }else if(self.dynamicTableView){
+        static NSString *cellId = @"dynamicCell";
+        WXdynamicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            cell = [[WXdynamicTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        return cell;
     }
     
+    return nil;
     
-    
-    return cell;
+   
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (tableView == self.newsTableView || tableView == self.dynamicTableView) {
+        WXNewsViewController *newsController = [[WXNewsViewController alloc]init];
+        [self presentViewController:newsController animated:YES completion:nil];
+    }
+        
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 180;
+    if (tableView ==self.tableView) {
+        return 180;
+    }else if (tableView == self.newsTableView ||tableView == self.dynamicTableView){
+        return 100;
+    }
+
+    return 100;
 }
 
 

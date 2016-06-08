@@ -8,7 +8,7 @@
 
 #import "WXNewsViewController.h"
 #import "WXTopView.h"
-@interface WXNewsViewController ()<UIWebViewDelegate,UIScrollViewDelegate>
+@interface WXNewsViewController ()<UIWebViewDelegate>
 
 @property (nonatomic,strong)WXTopView *topView;
 
@@ -17,16 +17,92 @@
 
 @end
 
-@implementation WXNewsViewController
+@implementation WXNewsViewController{
+    
+//    UIActivityIndicatorView *activityIndicatorView;
+//    UIView *opaqueView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+//    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
     [self NavgationView];
     
+    [self createWebVeiw];
+    
+}
+
+-(void)createWebVeiw{
+    
+    //1.创建UIWebView
+    
+    self.detailWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.topView.frame), screenWidth, screenHeigth-self.topView.frame.size.height)];
+    //2.设置属性
+    self.detailWebView.scalesPageToFit = YES;//自动对页面进行缩放以适应屏幕
+    [self.detailWebView setOpaque:NO];//是否透明
+    [self.detailWebView setUserInteractionEnabled:YES];
+    //3.显示网页视图UIWebView
+    [self.view addSubview:self.detailWebView];
+    //4.加载内容
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];//创建URL
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];//创建NSURLRequest
+    [self.detailWebView loadRequest:request];//加载
+    //5.导航
+    [self.detailWebView goBack];
+    [self.detailWebView goForward];
+    [self.detailWebView reload];//重载
+    [self.detailWebView stopLoading];//取消载入内容
+    //6 代理
+    self.detailWebView.delegate = self;
+    
+    
+//    opaqueView = [[UIView alloc]initWithFrame:CGRectMake(screenWidth/1.5, screenHeigth/1.5, 100 , 100)];
+//    activityIndicatorView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    [activityIndicatorView setCenter:opaqueView.center];
+//    [activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+//    [opaqueView setBackgroundColor:[UIColor blackColor]];
+//    [opaqueView setAlpha:0.6];
+//    [self.view addSubview:opaqueView];
+//    [opaqueView addSubview:activityIndicatorView];
+    
+}
+
+#pragma mark UIWebViewDelegate委托代理
+//-(void)webViewDidStartLoad:(UIWebView *)webView{
+//    [activityIndicatorView startAnimating];
+//    opaqueView.hidden = NO;
+//}
+//
+//-(void)webViewDidFinishLoad:(UIWebView *)webView{
+//    [activityIndicatorView startAnimating];
+//    opaqueView.hidden = YES;
+//}
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    if ((([httpResponse statusCode]/100) == 2)) {
+        // self.earthquakeData = [NSMutableData data];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        [ self.detailWebView loadRequest:[ NSURLRequest requestWithURL: url]];
+        self.detailWebView.delegate = self;
+    } else {
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:
+                                  NSLocalizedString(@"HTTP Error",
+                                                    @"Error message displayed when receving a connection error.")
+                                                             forKey:NSLocalizedDescriptionKey];
+        NSError *error = [NSError errorWithDomain:@"HTTP" code:[httpResponse statusCode] userInfo:userInfo];
+        
+        if ([error code] == 404) {
+            NSLog(@"xx");
+            self.detailWebView.hidden = YES;
+        }
+        
+    }
 }
 
 -(void)NavgationView{
