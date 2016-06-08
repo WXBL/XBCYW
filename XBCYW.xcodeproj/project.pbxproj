@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7920253E1D0654A7002F1FFB /* WXDelicacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7920253D1D0654A7002F1FFB /* WXDelicacyViewController.m */; };
-		792025421D066E2C002F1FFB /* WXTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025411D066E2C002F1FFB /* WXTypeModel.m */; };
-		792025451D066E37002F1FFB /* WXMerchantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025441D066E37002F1FFB /* WXMerchantModel.m */; };
-		792025481D066E44002F1FFB /* WXProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025471D066E44002F1FFB /* WXProductModel.m */; };
-		7920254B1D066E4D002F1FFB /* WXImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7920254A1D066E4D002F1FFB /* WXImageModel.m */; };
 		792025631D067615002F1FFB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025511D067615002F1FFB /* AFHTTPRequestOperation.m */; };
 		792025641D067615002F1FFB /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025531D067615002F1FFB /* AFHTTPRequestOperationManager.m */; };
 		792025651D067615002F1FFB /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025551D067615002F1FFB /* AFHTTPSessionManager.m */; };
@@ -34,7 +30,6 @@
 		841A960B1CFE726C004D753B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960A1CFE726C004D753B /* UIView+Extension.m */; };
 		841A96101CFE7287004D753B /* WXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960D1CFE7287004D753B /* WXNavigationController.m */; };
 		841A96111CFE7287004D753B /* WXTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A960F1CFE7287004D753B /* WXTabBarController.m */; };
-		841A96141CFE72EB004D753B /* WXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96131CFE72EB004D753B /* WXHomeViewController.m */; };
 		841A961A1CFE7A20004D753B /* WXBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96191CFE7A20004D753B /* WXBusinessViewController.m */; };
 		841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A96221CFE7B16004D753B /* WXMoreViewController.m */; };
 		841A97401CFE7CB5004D753B /* MDDataBaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A97371CFE7CB5004D753B /* MDDataBaseUtil.m */; };
@@ -52,6 +47,15 @@
 		841A975B1CFEDD42004D753B /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841A97591CFEDD42004D753B /* 2.jpg */; };
 		841A975E1CFEE5D7004D753B /* WXHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A975D1CFEE5D7004D753B /* WXHomeTableViewCell.m */; };
 		84600E321D066ED500699ADD /* newsImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84600E311D066ED500699ADD /* newsImage1.jpg */; };
+		84600E531D07A45000699ADD /* WXImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E4A1D07A45000699ADD /* WXImageModel.m */; };
+		84600E541D07A45000699ADD /* WXMerchantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E4C1D07A45000699ADD /* WXMerchantModel.m */; };
+		84600E561D07A45000699ADD /* WXProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E501D07A45000699ADD /* WXProductModel.m */; };
+		84600E571D07A45000699ADD /* WXTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E521D07A45000699ADD /* WXTypeModel.m */; };
+		84600E5A1D07A46400699ADD /* WXNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E591D07A46400699ADD /* WXNewsModel.m */; };
+		84600E5F1D07A4E500699ADD /* WJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E5D1D07A4E500699ADD /* WJRefresh.m */; };
+		84600E601D07A4E500699ADD /* WJRefreshArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84600E5E1D07A4E500699ADD /* WJRefreshArrow@2x.png */; };
+		84600E631D07A57900699ADD /* WXNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E621D07A57900699ADD /* WXNewsViewController.m */; };
+		84600E681D07A5E800699ADD /* WXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E671D07A5E800699ADD /* WXHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,14 +78,6 @@
 /* Begin PBXFileReference section */
 		7920253C1D0654A7002F1FFB /* WXDelicacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDelicacyViewController.h; path = "XBCYW/Delicacy（美食）/WXDelicacyViewController.h"; sourceTree = SOURCE_ROOT; };
 		7920253D1D0654A7002F1FFB /* WXDelicacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDelicacyViewController.m; path = "XBCYW/Delicacy（美食）/WXDelicacyViewController.m"; sourceTree = SOURCE_ROOT; };
-		792025401D066E2C002F1FFB /* WXTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTypeModel.h; sourceTree = "<group>"; };
-		792025411D066E2C002F1FFB /* WXTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTypeModel.m; sourceTree = "<group>"; };
-		792025431D066E37002F1FFB /* WXMerchantModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMerchantModel.h; sourceTree = "<group>"; };
-		792025441D066E37002F1FFB /* WXMerchantModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMerchantModel.m; sourceTree = "<group>"; };
-		792025461D066E44002F1FFB /* WXProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXProductModel.h; sourceTree = "<group>"; };
-		792025471D066E44002F1FFB /* WXProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXProductModel.m; sourceTree = "<group>"; };
-		792025491D066E4D002F1FFB /* WXImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImageModel.h; sourceTree = "<group>"; };
-		7920254A1D066E4D002F1FFB /* WXImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImageModel.m; sourceTree = "<group>"; };
 		792025501D067615002F1FFB /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		792025511D067615002F1FFB /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		792025521D067615002F1FFB /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -125,8 +121,6 @@
 		841A960D1CFE7287004D753B /* WXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNavigationController.m; sourceTree = "<group>"; };
 		841A960E1CFE7287004D753B /* WXTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTabBarController.h; sourceTree = "<group>"; };
 		841A960F1CFE7287004D753B /* WXTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTabBarController.m; sourceTree = "<group>"; };
-		841A96121CFE72EB004D753B /* WXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeViewController.h; sourceTree = "<group>"; };
-		841A96131CFE72EB004D753B /* WXHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeViewController.m; sourceTree = "<group>"; };
 		841A96181CFE7A20004D753B /* WXBusinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXBusinessViewController.h; sourceTree = "<group>"; };
 		841A96191CFE7A20004D753B /* WXBusinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXBusinessViewController.m; sourceTree = "<group>"; };
 		841A96211CFE7B16004D753B /* WXMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMoreViewController.h; sourceTree = "<group>"; };
@@ -157,6 +151,23 @@
 		841A975C1CFEE5D7004D753B /* WXHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeTableViewCell.h; sourceTree = "<group>"; };
 		841A975D1CFEE5D7004D753B /* WXHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeTableViewCell.m; sourceTree = "<group>"; };
 		84600E311D066ED500699ADD /* newsImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newsImage1.jpg; sourceTree = "<group>"; };
+		84600E491D07A45000699ADD /* WXImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImageModel.h; sourceTree = "<group>"; };
+		84600E4A1D07A45000699ADD /* WXImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImageModel.m; sourceTree = "<group>"; };
+		84600E4B1D07A45000699ADD /* WXMerchantModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMerchantModel.h; sourceTree = "<group>"; };
+		84600E4C1D07A45000699ADD /* WXMerchantModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMerchantModel.m; sourceTree = "<group>"; };
+		84600E4F1D07A45000699ADD /* WXProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXProductModel.h; sourceTree = "<group>"; };
+		84600E501D07A45000699ADD /* WXProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXProductModel.m; sourceTree = "<group>"; };
+		84600E511D07A45000699ADD /* WXTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXTypeModel.h; sourceTree = "<group>"; };
+		84600E521D07A45000699ADD /* WXTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXTypeModel.m; sourceTree = "<group>"; };
+		84600E581D07A46400699ADD /* WXNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXNewsModel.h; path = XBCYW/Model/WXNewsModel.h; sourceTree = SOURCE_ROOT; };
+		84600E591D07A46400699ADD /* WXNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXNewsModel.m; path = XBCYW/Model/WXNewsModel.m; sourceTree = SOURCE_ROOT; };
+		84600E5C1D07A4E500699ADD /* WJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJRefresh.h; sourceTree = "<group>"; };
+		84600E5D1D07A4E500699ADD /* WJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJRefresh.m; sourceTree = "<group>"; };
+		84600E5E1D07A4E500699ADD /* WJRefreshArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WJRefreshArrow@2x.png"; sourceTree = "<group>"; };
+		84600E611D07A57900699ADD /* WXNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNewsViewController.h; sourceTree = "<group>"; };
+		84600E621D07A57900699ADD /* WXNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNewsViewController.m; sourceTree = "<group>"; };
+		84600E661D07A5E800699ADD /* WXHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXHomeViewController.h; sourceTree = "<group>"; };
+		84600E671D07A5E800699ADD /* WXHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,21 +195,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7920253F1D066DFC002F1FFB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				792025461D066E44002F1FFB /* WXProductModel.h */,
-				792025471D066E44002F1FFB /* WXProductModel.m */,
-				792025491D066E4D002F1FFB /* WXImageModel.h */,
-				7920254A1D066E4D002F1FFB /* WXImageModel.m */,
-				792025431D066E37002F1FFB /* WXMerchantModel.h */,
-				792025441D066E37002F1FFB /* WXMerchantModel.m */,
-				792025401D066E2C002F1FFB /* WXTypeModel.h */,
-				792025411D066E2C002F1FFB /* WXTypeModel.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		7920254F1D067615002F1FFB /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,8 +244,8 @@
 		841A95991CFDAED9004D753B /* XBCYW */ = {
 			isa = PBXGroup;
 			children = (
+				84600E481D07A42600699ADD /* Model */,
 				7920254F1D067615002F1FFB /* AFNetworking */,
-				7920253F1D066DFC002F1FFB /* Models */,
 				841A95E61CFDB45C004D753B /* NewFeature（新特性） */,
 				841A95DA1CFDB45C004D753B /* FrameWork */,
 				841A95DB1CFDB45C004D753B /* Headers（头文件） */,
@@ -336,6 +332,7 @@
 		841A95DA1CFDB45C004D753B /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				84600E5B1D07A4E500699ADD /* Refresh */,
 				841A974C1CFE8587004D753B /* SHLUILabel */,
 				841A97481CFE857A004D753B /* MBProgressHUD */,
 			);
@@ -363,8 +360,10 @@
 		841A95DD1CFDB45C004D753B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				841A96121CFE72EB004D753B /* WXHomeViewController.h */,
-				841A96131CFE72EB004D753B /* WXHomeViewController.m */,
+				84600E661D07A5E800699ADD /* WXHomeViewController.h */,
+				84600E671D07A5E800699ADD /* WXHomeViewController.m */,
+				84600E611D07A57900699ADD /* WXNewsViewController.h */,
+				84600E621D07A57900699ADD /* WXNewsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -372,6 +371,8 @@
 		841A95DE1CFDB45C004D753B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84600E581D07A46400699ADD /* WXNewsModel.h */,
+				84600E591D07A46400699ADD /* WXNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -606,6 +607,31 @@
 			name = news;
 			sourceTree = "<group>";
 		};
+		84600E481D07A42600699ADD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84600E491D07A45000699ADD /* WXImageModel.h */,
+				84600E4A1D07A45000699ADD /* WXImageModel.m */,
+				84600E4B1D07A45000699ADD /* WXMerchantModel.h */,
+				84600E4C1D07A45000699ADD /* WXMerchantModel.m */,
+				84600E4F1D07A45000699ADD /* WXProductModel.h */,
+				84600E501D07A45000699ADD /* WXProductModel.m */,
+				84600E511D07A45000699ADD /* WXTypeModel.h */,
+				84600E521D07A45000699ADD /* WXTypeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84600E5B1D07A4E500699ADD /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				84600E5C1D07A4E500699ADD /* WJRefresh.h */,
+				84600E5D1D07A4E500699ADD /* WJRefresh.m */,
+				84600E5E1D07A4E500699ADD /* WJRefreshArrow@2x.png */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -719,6 +745,7 @@
 				841A975A1CFEDD42004D753B /* 3.jpg in Resources */,
 				841A96071CFDB59B004D753B /* LaunchScreen.storyboard in Resources */,
 				841A97571CFEDB8B004D753B /* 1.jpg in Resources */,
+				84600E601D07A4E500699ADD /* WJRefreshArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				792025631D067615002F1FFB /* AFHTTPRequestOperation.m in Sources */,
+				84600E631D07A57900699ADD /* WXNewsViewController.m in Sources */,
 				841A96111CFE7287004D753B /* WXTabBarController.m in Sources */,
 				7920253E1D0654A7002F1FFB /* WXDelicacyViewController.m in Sources */,
 				841A97441CFE7CB5004D753B /* WXTopView.m in Sources */,
@@ -751,21 +779,24 @@
 				841A975E1CFEE5D7004D753B /* WXHomeTableViewCell.m in Sources */,
 				841A97471CFE7D6C004D753B /* WXDiscoverViewController.m in Sources */,
 				841A97421CFE7CB5004D753B /* UILabel+WXStringFrame.m in Sources */,
+				84600E561D07A45000699ADD /* WXProductModel.m in Sources */,
 				841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */,
+				84600E5F1D07A4E500699ADD /* WJRefresh.m in Sources */,
 				792025681D067615002F1FFB /* AFURLConnectionOperation.m in Sources */,
 				792025641D067615002F1FFB /* AFHTTPRequestOperationManager.m in Sources */,
 				841A97541CFEAEB7004D753B /* WXSearchBar.m in Sources */,
+				84600E5A1D07A46400699ADD /* WXNewsModel.m in Sources */,
+				84600E571D07A45000699ADD /* WXTypeModel.m in Sources */,
 				841A95FC1CFDB45D004D753B /* ViewController.m in Sources */,
 				841A974B1CFE857A004D753B /* MBProgressHUD.m in Sources */,
 				841A97411CFE7CB5004D753B /* MViewUtil.m in Sources */,
 				841A96041CFDB53B004D753B /* main.m in Sources */,
 				7920256B1D067615002F1FFB /* AFURLSessionManager.m in Sources */,
-				7920254B1D066E4D002F1FFB /* WXImageModel.m in Sources */,
+				84600E681D07A5E800699ADD /* WXHomeViewController.m in Sources */,
 				792025671D067615002F1FFB /* AFSecurityPolicy.m in Sources */,
 				841A974F1CFE8587004D753B /* SHLUILabel.m in Sources */,
 				841A96101CFE7287004D753B /* WXNavigationController.m in Sources */,
 				792025661D067615002F1FFB /* AFNetworkReachabilityManager.m in Sources */,
-				792025451D066E37002F1FFB /* WXMerchantModel.m in Sources */,
 				792025771D06C158002F1FFB /* WXDelicacyDetailViewController.m in Sources */,
 				792025651D067615002F1FFB /* AFHTTPSessionManager.m in Sources */,
 				792025691D067615002F1FFB /* AFURLRequestSerialization.m in Sources */,
@@ -773,10 +804,9 @@
 				841A97401CFE7CB5004D753B /* MDDataBaseUtil.m in Sources */,
 				841A97431CFE7CB5004D753B /* validateTest.m in Sources */,
 				841A95FB1CFDB45D004D753B /* AppDelegate.m in Sources */,
-				841A96141CFE72EB004D753B /* WXHomeViewController.m in Sources */,
+				84600E531D07A45000699ADD /* WXImageModel.m in Sources */,
+				84600E541D07A45000699ADD /* WXMerchantModel.m in Sources */,
 				841A961A1CFE7A20004D753B /* WXBusinessViewController.m in Sources */,
-				792025481D066E44002F1FFB /* WXProductModel.m in Sources */,
-				792025421D066E2C002F1FFB /* WXTypeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
