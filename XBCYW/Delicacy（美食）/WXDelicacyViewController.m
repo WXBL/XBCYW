@@ -15,6 +15,8 @@
 #import "WXProductModel.h"
 #import "WXImageModel.h"
 #import "WXDelicacyDetailViewController.h"
+#define GET_PRODUCTLIST_URL @""
+#define GET_CATEGORYLIST_URL @""
 @interface WXDelicacyViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong)WXSearchBar *searchBar;
 @property(nonatomic,strong)UIButton *timeBtn;
@@ -49,6 +51,31 @@
         self.categoryArr=[[NSMutableArray alloc] init];
     }
     return _categoryArr;
+}
+-(void)addDate{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    hud.mode = MBProgressHUDModeText;
+    
+    hud.margin = 10.f;
+    hud.yOffset = 150.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:3];
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    NSString *path=[NSString stringWithFormat:@"%@%@",BASE_SERVICE_URL,GET_CATEGORYLIST_URL];
+    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation,NSArray *responceObject){
+        self.categoryArr=[self.typeModel getTypeDataWithArrayJSON:responceObject];
+        [self.categoryTableView reloadData];
+    }failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        hud.labelText = @"请求失败，请重试！";
+    }];
+    path=[NSString stringWithFormat:@"%@%@",BASE_SERVICE_URL,GET_PRODUCTLIST_URL];
+    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation,NSArray *responceObject){
+        self.productArr=[self.productModel getProductListWithArrayJSON:responceObject];
+        [self.productTableView reloadData];
+    }failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        hud.labelText = @"请求失败，请重试！";
+    }];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -132,8 +159,8 @@
 //        return self.currentArr.count;
         return 6;
     }else if (tableView==self.categoryTableView){
-//        return self.categoryArr.count;
-        return 10;
+        return self.categoryArr.count;
+//        return 10;
     }
     return 0;
 }
@@ -146,9 +173,9 @@
         if (cell==nil) {
             cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         }
-//        self.typeModel=[self.categoryArr objectAtIndex:indexPath.row];
-//        cell.textLabel.text=self.typeModel.Type_Name;
-        cell.textLabel.text=@"a";
+        self.typeModel=[self.categoryArr objectAtIndex:indexPath.row];
+        cell.textLabel.text=self.typeModel.Type_Name;
+//        cell.textLabel.text=@"a";
         cell.backgroundView.alpha=0.5;
     }else if(tableView==self.productTableView){
         cell=[tableView dequeueReusableCellWithIdentifier:cellID1];
@@ -160,7 +187,7 @@
 //        NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imgModel.Image_ur]];
 //        cell.imageView.image=[UIImage imageWithData:data];
 //        cell.textLabel.text=self.productModel.Goods_Name;
-//        cell.detailTextLabel.text=self.productModel.Goods_Price;;
+//        cell.detailTextLabel.text=self.productModel.Goods_Price;
         cell.imageView.image=[UIImage imageNamed:@"2.jpg"];
         cell.textLabel.text=[NSString stringWithFormat:@"%@%ld",@"西北餐饮网商品",(long)indexPath.row];
         cell.detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
