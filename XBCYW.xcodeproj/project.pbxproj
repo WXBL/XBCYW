@@ -18,6 +18,8 @@
 		7920256A1D067615002F1FFB /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025601D067615002F1FFB /* AFURLResponseSerialization.m */; };
 		7920256B1D067615002F1FFB /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025621D067615002F1FFB /* AFURLSessionManager.m */; };
 		792025771D06C158002F1FFB /* WXDelicacyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025761D06C158002F1FFB /* WXDelicacyDetailViewController.m */; };
+		7920257A1D07C205002F1FFB /* WXBigPic.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025791D07C205002F1FFB /* WXBigPic.m */; };
+		7920257D1D07FEFD002F1FFB /* WXBusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7920257C1D07FEFD002F1FFB /* WXBusinessDetailViewController.m */; };
 		79DE35131CFECDEA00BBD57D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE35121CFECDEA00BBD57D /* nav_bg.png */; };
 		841A95B51CFDAEDA004D753B /* XBCYWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95B41CFDAEDA004D753B /* XBCYWTests.m */; };
 		841A95C01CFDAEDA004D753B /* XBCYWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95BF1CFDAEDA004D753B /* XBCYWUITests.m */; };
@@ -99,6 +101,10 @@
 		792025621D067615002F1FFB /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		792025751D06C158002F1FFB /* WXDelicacyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXDelicacyDetailViewController.h; path = "XBCYW/Delicacy（美食）/WXDelicacyDetailViewController.h"; sourceTree = SOURCE_ROOT; };
 		792025761D06C158002F1FFB /* WXDelicacyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WXDelicacyDetailViewController.m; path = "XBCYW/Delicacy（美食）/WXDelicacyDetailViewController.m"; sourceTree = SOURCE_ROOT; };
+		792025781D07C205002F1FFB /* WXBigPic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXBigPic.h; sourceTree = "<group>"; };
+		792025791D07C205002F1FFB /* WXBigPic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXBigPic.m; sourceTree = "<group>"; };
+		7920257B1D07FEFD002F1FFB /* WXBusinessDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXBusinessDetailViewController.h; sourceTree = "<group>"; };
+		7920257C1D07FEFD002F1FFB /* WXBusinessDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXBusinessDetailViewController.m; sourceTree = "<group>"; };
 		79DE35121CFECDEA00BBD57D /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg.png; sourceTree = "<group>"; };
 		841A95971CFDAED9004D753B /* XBCYW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XBCYW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A95B01CFDAEDA004D753B /* XBCYWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XBCYWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -503,6 +509,8 @@
 			children = (
 				841A96181CFE7A20004D753B /* WXBusinessViewController.h */,
 				841A96191CFE7A20004D753B /* WXBusinessViewController.m */,
+				7920257B1D07FEFD002F1FFB /* WXBusinessDetailViewController.h */,
+				7920257C1D07FEFD002F1FFB /* WXBusinessDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -524,6 +532,8 @@
 		841A95F51CFDB45D004D753B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				792025781D07C205002F1FFB /* WXBigPic.h */,
+				792025791D07C205002F1FFB /* WXBigPic.m */,
 				841A97361CFE7CB5004D753B /* MDDataBaseUtil.h */,
 				841A97371CFE7CB5004D753B /* MDDataBaseUtil.m */,
 				841A97381CFE7CB5004D753B /* MViewUtil.h */,
@@ -774,6 +784,7 @@
 				84600E631D07A57900699ADD /* WXNewsViewController.m in Sources */,
 				841A96111CFE7287004D753B /* WXTabBarController.m in Sources */,
 				7920253E1D0654A7002F1FFB /* WXDelicacyViewController.m in Sources */,
+				7920257D1D07FEFD002F1FFB /* WXBusinessDetailViewController.m in Sources */,
 				841A97441CFE7CB5004D753B /* WXTopView.m in Sources */,
 				7920256A1D067615002F1FFB /* AFURLResponseSerialization.m in Sources */,
 				841A975E1CFEE5D7004D753B /* WXHomeTableViewCell.m in Sources */,
@@ -804,6 +815,7 @@
 				841A97401CFE7CB5004D753B /* MDDataBaseUtil.m in Sources */,
 				841A97431CFE7CB5004D753B /* validateTest.m in Sources */,
 				841A95FB1CFDB45D004D753B /* AppDelegate.m in Sources */,
+				7920257A1D07C205002F1FFB /* WXBigPic.m in Sources */,
 				84600E531D07A45000699ADD /* WXImageModel.m in Sources */,
 				84600E541D07A45000699ADD /* WXMerchantModel.m in Sources */,
 				841A961A1CFE7A20004D753B /* WXBusinessViewController.m in Sources */,
