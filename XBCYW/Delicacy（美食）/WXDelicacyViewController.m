@@ -135,6 +135,7 @@
     self.productTableView.delegate=self;
     self.productTableView.dataSource=self;
     
+    
     self.categoryTableView=[[UITableView alloc] initWithFrame:CGRectMake(screenWidth-200, CGRectGetMaxY(searchBtnView.frame)+1, 200, 200)];
     self.categoryTableView.tableFooterView=[[UIView alloc] init];
     self.categoryTableView.backgroundColor=[UIColor lightGrayColor];
@@ -143,6 +144,8 @@
     [self.categoryTableView bringSubviewToFront:self.view];
     self.categoryTableView.delegate=self;
     self.categoryTableView.dataSource=self;
+   
+    
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -188,10 +191,23 @@
 //        cell.imageView.image=[UIImage imageWithData:data];
 //        cell.textLabel.text=self.productModel.Goods_Name;
 //        cell.detailTextLabel.text=self.productModel.Goods_Price;
+        /*
         cell.imageView.image=[UIImage imageNamed:@"2.jpg"];
         cell.textLabel.text=[NSString stringWithFormat:@"%@%ld",@"西北餐饮网商品",(long)indexPath.row];
         cell.detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
-        
+        */
+        UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0,self.productTableView.frame.size.width, 60)];
+        [cell addSubview:view1];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.frame = CGRectMake(10, 0, self.productTableView.frame.size.width/3, 50);
+        imageView.image=[UIImage imageNamed:@"2.jpg"];
+        [cell addSubview:imageView];
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame)+10, 0, self.productTableView.frame.size.width/2, 20)];
+        textLabel.text=[NSString stringWithFormat:@"%@%ld",@"西北餐饮网商品",(long)indexPath.row];
+        [cell addSubview:textLabel];
+        UILabel *detailTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame)+10, 20, self.productTableView.frame.size.width/2, 20)];
+        detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
+        [cell addSubview:detailTextLabel];
     }
     return cell;
 }

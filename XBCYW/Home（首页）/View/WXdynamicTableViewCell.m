@@ -7,7 +7,7 @@
 //
 
 #import "WXdynamicTableViewCell.h"
-
+#import "UILabel+WXStringFrame.h"
 @implementation WXdynamicTableViewCell
 
 - (void)awakeFromNib {
@@ -41,6 +41,8 @@
     self.detailLabel.textColor = [UIColor blackColor];
     self.detailLabel.textAlignment = NSTextAlignmentLeft;
     self.detailLabel.font = [UIFont systemFontOfSize:12];
+    CGSize size=[self.detailLabel boundingRectWithSize:CGSizeMake(screenWidth-CGRectGetMaxX(self.image.frame)-20, 60)];
+    self.detailLabel.frame = CGRectMake(CGRectGetMaxX(self.image.frame)+10, CGRectGetMaxY(self.titleLabel.frame), size.width,size.height);
     [self addSubview:self.detailLabel];
     
     

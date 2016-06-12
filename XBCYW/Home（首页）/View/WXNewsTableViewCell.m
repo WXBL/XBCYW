@@ -7,6 +7,9 @@
 //
 
 #import "WXNewsTableViewCell.h"
+#import "UILabel+WXStringFrame.h"
+
+
 
 @implementation WXNewsTableViewCell
 
@@ -15,6 +18,7 @@
     // Initialization code
 }
 
+
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -22,6 +26,7 @@
     }
     return self;
 }
+
 
 -(void)addSubviews{
     self.image = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 80, 80)];
@@ -36,12 +41,14 @@
     [self addSubview:self.titleLabel];
     
     
-    self.detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.image.frame)+10, CGRectGetMaxY(self.titleLabel.frame), screenWidth-CGRectGetMaxX(self.image.frame)-20, 60)];
-    self.detailLabel.text = @"askdjfakjsdfjas;ldkjf;lajkdflakjsdgl;kajsdlgkjal;sdkjfl;askdfljaksd";
+    self.detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.image.frame)+10,CGRectGetMaxY(self.titleLabel.frame),screenWidth-CGRectGetMaxX(self.image.frame)-20, 60)];
+    self.detailLabel.text = @"askdjfakjsdfjas;ldkjf;lajkdflakjsdgl;kajsdlgkjal;sdkjfl;askdfljaksdsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasddad";
     self.detailLabel.numberOfLines = 0;
     self.detailLabel.textColor = [UIColor blackColor];
     self.detailLabel.textAlignment = NSTextAlignmentLeft;
     self.detailLabel.font = [UIFont systemFontOfSize:12];
+    CGSize size=[self.detailLabel boundingRectWithSize:CGSizeMake(screenWidth-CGRectGetMaxX(self.image.frame)-20, 60)];
+    self.detailLabel.frame = CGRectMake(CGRectGetMaxX(self.image.frame)+10, CGRectGetMaxY(self.titleLabel.frame), size.width,size.height);
     [self addSubview:self.detailLabel];
     
     

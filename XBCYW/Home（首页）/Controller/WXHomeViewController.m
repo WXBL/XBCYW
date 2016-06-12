@@ -15,8 +15,11 @@
 #import "WXNewsTableViewCell.h"
 #import "WXdynamicTableViewCell.h"
 #import "WJRefresh.h"
+#import "AFNetworking.h"
 
 #import "WXNewsViewController.h"
+#import "WXNewsModel.h"
+#define GET_MERCHANT_URL @""
 @interface WXHomeViewController ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,WXHomeTableViewCellDelegate>
 
 @property (nonatomic,strong)WXSearchBar *searchBar;
@@ -45,6 +48,7 @@
 @property (nonatomic,strong)UITapGestureRecognizer *dismissMenuView;
 
 @property (nonatomic,strong)WJRefresh *refresh;
+@property (nonatomic,strong)WXNewsModel *newsModel;
 @end
 
 @implementation WXHomeViewController
@@ -55,7 +59,23 @@
     }
     return _newsListArray;
 }
-
+-(void)addData{
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    NSString *path=[NSString stringWithFormat:@"%@%@",BASE_SERVICE_URL,GET_MERCHANT_URL];
+    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation,NSArray *responceObject){
+        self.currentNewsArray=[self.newsModel getNewsListWithArrayJSON:responceObject];
+        [self.newsTableView reloadData];
+    }failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"网络请求失败！";
+        hud.margin = 10.f;
+        hud.yOffset = 150.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+    }];
+}
 #pragma mark UIScrollViewDelegate
 // 实现UIScrollView的滚动方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
