@@ -21,8 +21,6 @@
 		7920257A1D07C205002F1FFB /* WXBigPic.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025791D07C205002F1FFB /* WXBigPic.m */; };
 		7920257D1D07FEFD002F1FFB /* WXBusinessDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7920257C1D07FEFD002F1FFB /* WXBusinessDetailViewController.m */; };
 		792025801D0CF935002F1FFB /* WXAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7920257F1D0CF935002F1FFB /* WXAboutViewController.m */; };
-		792025831D0D059C002F1FFB /* WXDiscoverDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025821D0D059C002F1FFB /* WXDiscoverDetailViewController.m */; };
-		792025861D0D0994002F1FFB /* WXDiscoverListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792025851D0D0994002F1FFB /* WXDiscoverListViewController.m */; };
 		79DE35131CFECDEA00BBD57D /* nav_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE35121CFECDEA00BBD57D /* nav_bg.png */; };
 		8400E89B1D0D66FE006ED98D /* WXfarmImportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400E89A1D0D66FE006ED98D /* WXfarmImportsTableViewCell.m */; };
 		841A95B51CFDAEDA004D753B /* XBCYWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 841A95B41CFDAEDA004D753B /* XBCYWTests.m */; };
@@ -113,10 +111,6 @@
 		7920257C1D07FEFD002F1FFB /* WXBusinessDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXBusinessDetailViewController.m; sourceTree = "<group>"; };
 		7920257E1D0CF935002F1FFB /* WXAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAboutViewController.h; sourceTree = "<group>"; };
 		7920257F1D0CF935002F1FFB /* WXAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAboutViewController.m; sourceTree = "<group>"; };
-		792025811D0D059C002F1FFB /* WXDiscoverDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXDiscoverDetailViewController.h; sourceTree = "<group>"; };
-		792025821D0D059C002F1FFB /* WXDiscoverDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXDiscoverDetailViewController.m; sourceTree = "<group>"; };
-		792025841D0D0994002F1FFB /* WXDiscoverListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXDiscoverListViewController.h; sourceTree = "<group>"; };
-		792025851D0D0994002F1FFB /* WXDiscoverListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXDiscoverListViewController.m; sourceTree = "<group>"; };
 		79DE35121CFECDEA00BBD57D /* nav_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg.png; sourceTree = "<group>"; };
 		8400E8991D0D66F1006ED98D /* WXfarmImportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXfarmImportsTableViewCell.h; sourceTree = "<group>"; };
 		8400E89A1D0D66FE006ED98D /* WXfarmImportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXfarmImportsTableViewCell.m; sourceTree = "<group>"; };
@@ -476,10 +470,6 @@
 			children = (
 				841A97451CFE7D6C004D753B /* WXDiscoverViewController.h */,
 				841A97461CFE7D6C004D753B /* WXDiscoverViewController.m */,
-				792025811D0D059C002F1FFB /* WXDiscoverDetailViewController.h */,
-				792025821D0D059C002F1FFB /* WXDiscoverDetailViewController.m */,
-				792025841D0D0994002F1FFB /* WXDiscoverListViewController.h */,
-				792025851D0D0994002F1FFB /* WXDiscoverListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -820,12 +810,10 @@
 				841A975E1CFEE5D7004D753B /* WXHomeTableViewCell.m in Sources */,
 				841A97471CFE7D6C004D753B /* WXDiscoverViewController.m in Sources */,
 				841A97421CFE7CB5004D753B /* UILabel+WXStringFrame.m in Sources */,
-				792025861D0D0994002F1FFB /* WXDiscoverListViewController.m in Sources */,
 				84600E561D07A45000699ADD /* WXProductModel.m in Sources */,
 				841A96231CFE7B16004D753B /* WXMoreViewController.m in Sources */,
 				84600E6C1D08033200699ADD /* WXNewsTableViewCell.m in Sources */,
 				84600E5F1D07A4E500699ADD /* WJRefresh.m in Sources */,
-				792025831D0D059C002F1FFB /* WXDiscoverDetailViewController.m in Sources */,
 				792025681D067615002F1FFB /* AFURLConnectionOperation.m in Sources */,
 				792025641D067615002F1FFB /* AFHTTPRequestOperationManager.m in Sources */,
 				841A97541CFEAEB7004D753B /* WXSearchBar.m in Sources */,
