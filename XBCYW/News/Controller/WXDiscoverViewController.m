@@ -11,9 +11,11 @@
 #import "WJRefresh.h"
 #import "WXDelicacyDetailViewController.h"
 #import "WXfarmImportsTableViewCell.h"
-
+#import "AFHTTPRequestOperationManager.h"
+#import "MBProgressHUD.h"
+#define DISCOVER_LIST_URL @""
 @interface WXDiscoverViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
-
+@property(nonatomic,strong)NSMutableArray *array;
 @property(nonatomic,strong)WXSearchBar *searchBar;
 @property (nonatomic,strong)UICollectionView *collectionView;
 
@@ -21,7 +23,6 @@
 @end
 
 @implementation WXDiscoverViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,12 +32,16 @@
     self.searchBar.frame=CGRectMake(20, CGRectGetMinY(self.searchBar.frame), screenWidth-40, CGRectGetHeight(self.searchBar.frame));
     self.searchBar.placeholder=@"请输入要搜索的美食";
     [self addCollectionView];
-    
      self.view.backgroundColor = [UIColor blueColor];
     
     
 }
-
+-(NSMutableArray *)array{
+    if (!_array) {
+        self.array=[NSMutableArray array];
+    }
+    return _array;
+}
 -(void)addCollectionView{
     
     float headerHeight = 30;
@@ -52,12 +57,26 @@
     self.collectionView.dataSource = self;
     [self.view addSubview:self.collectionView];
     
-
-    
-    
-    
 }
 
+-(void)addDate{
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    NSString *path=[NSString stringWithFormat:@"%@%@",BASE_SERVICE_URL,DISCOVER_LIST_URL];
+    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation,NSArray *responceObject){
+        self.array=[[[WXTypeModel alloc] init]getTypeDataWithArrayJSON:responceObject];
+        [self.collectionView reloadData];
+    }failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.margin = 10.f;
+        hud.yOffset = 150.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:10];
+         hud.labelText = @"请求失败，请重试！";
+    }];
+
+    
+}
 //点击购物车触发事件
 -(void)ClickBuyCartButton:(id)sender{
     

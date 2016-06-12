@@ -81,6 +81,8 @@
     cell.detailTextLabel.textColor=[UIColor lightGrayColor];
     cell.textLabel.font=[UIFont systemFontOfSize:16];
     cell.textLabel.textColor=[UIColor blackColor];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     return cell;
 }
 

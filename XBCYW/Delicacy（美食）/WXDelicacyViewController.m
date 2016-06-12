@@ -195,6 +195,7 @@
         cell.imageView.image=[UIImage imageNamed:@"2.jpg"];
         cell.textLabel.text=[NSString stringWithFormat:@"%@%ld",@"西北餐饮网商品",(long)indexPath.row];
         cell.detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
+
         */
         UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0,self.productTableView.frame.size.width, 60)];
         [cell addSubview:view1];
@@ -208,6 +209,9 @@
         UILabel *detailTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(imageView.frame)+10, 20, self.productTableView.frame.size.width/2, 20)];
         detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
         [cell addSubview:detailTextLabel];
+
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
