@@ -191,7 +191,8 @@
         cell.imageView.image=[UIImage imageNamed:@"2.jpg"];
         cell.textLabel.text=[NSString stringWithFormat:@"%@%ld",@"西北餐饮网商品",(long)indexPath.row];
         cell.detailTextLabel.text=[NSString stringWithFormat:@"¥%ld",indexPath.row];
-        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
