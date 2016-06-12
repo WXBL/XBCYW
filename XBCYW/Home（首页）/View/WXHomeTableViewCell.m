@@ -7,6 +7,7 @@
 //
 
 #import "WXHomeTableViewCell.h"
+#import "UILabel+WXStringFrame.h"
 
 @implementation WXHomeTableViewCell
 
@@ -82,15 +83,22 @@
     self.image = [[UIImageView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(self.titleLabel2.frame), self.newsBtn2.frame.size.height-30, self.newsBtn2.frame.size.height-30)];
     [self.image setImage:[UIImage imageNamed:@"newsImage1.jpg"]];
     [self.newsBtn2 addSubview:self.image];
-    
-    self.detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.image.frame)+10, CGRectGetMaxY(self.titleLabel2.frame), self.newsBtn2.frame.size.width - self.image.frame.size.width -30, self.image.frame.size.height)];
+    CGSize size=[self.detailLabel boundingRectWithSize:CGSizeMake(screenWidth-20, 0)];
+     self.detailLabel.frame=CGRectMake(CGRectGetMaxX(self.image.frame)+10,CGRectGetMaxY(self.titleLabel2.frame),size.width, size.height);
+//    self.detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.image.frame)+10, CGRectGetMaxY(self.titleLabel2.frame), self.newsBtn2.frame.size.width - self.image.frame.size.width -30, self.image.frame.size.height)];
     self.detailLabel.text = @"asdfasdgasdgasdgasdgakdjgflakjsdf;ljka;lsjgkdfng.skdnfgksdlfkgjalkdjglsdkfjglsdkfjgsldkfjgslkdjfg;laskdjg;laksjdgl;akjsdg;lkajsldkgja;lksjdglaksjdglsdkl";
     self.detailLabel.numberOfLines = 0;
     self.detailLabel.textColor = [UIColor blackColor];
     self.detailLabel.font = [UIFont systemFontOfSize:14];
     self.detailLabel.textAlignment = NSTextAlignmentLeft;
     [self.newsBtn2 addSubview: self.detailLabel];
-    
+//      self.introductLbl.numberOfLines=0;
+//    self.introductLbl.font=[UIFont systemFontOfSize:16];
+//    CGSize size=[self.introductLbl boundingRectWithSize:CGSizeMake(screenWidth-20, 0)];
+//    self.introductLbl.frame=CGRectMake(CGRectGetMinX(self.titleLbl.frame), CGRectGetMaxY(self.teleLbl.frame), size.width, size.height);
+//    [self.scrollerView addSubview:self.introductLbl];
+//    self.scrollerView.contentSize=CGSizeMake(screenWidth, CGRectGetMaxY(self.introductLbl.frame));
+//    
 }
 
 -(void)ClickNewsBtn:(UIButton *)button{
