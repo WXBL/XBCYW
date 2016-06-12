@@ -56,15 +56,15 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     WXBusinessDetailViewController *detailVC=[[WXBusinessDetailViewController alloc] init];
-    detailVC.merchant=[self.merchantArr objectAtIndex:indexPath.row];
+//    detailVC.merchant=[self.merchantArr objectAtIndex:indexPath.row];
     [self presentViewController:detailVC animated:YES completion:nil];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return 2;
-    return self.merchantArr.count;
+    return 5;
+//    return self.merchantArr.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellID=@"MERCHANTCELL";
@@ -72,12 +72,15 @@
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    self.merchant=[self.merchantArr objectAtIndex:indexPath.row];
-    cell.textLabel.text=self.merchant.Merchant_Name;
+//    self.merchant=[self.merchantArr objectAtIndex:indexPath.row];
+//    cell.textLabel.text=self.merchant.Merchant_Name;
+//    cell.detailTextLabel.text=self.merchant.Merchants_Tell;
+    
+    cell.textLabel.text=@"天津万象";
+    cell.detailTextLabel.text=@"联系方式：01234567890";
+    cell.detailTextLabel.textColor=[UIColor lightGrayColor];
     cell.textLabel.font=[UIFont systemFontOfSize:16];
     cell.textLabel.textColor=[UIColor blackColor];
-    cell.detailTextLabel.text=self.merchant.Merchants_Tell;
-    cell.detailTextLabel.textColor=[UIColor lightGrayColor];
     return cell;
 }
 

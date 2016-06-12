@@ -56,13 +56,15 @@
 }
 -(void)addProductIntroduct{
     self.titleLbl=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.imageScrollView.frame)+5, CGRectGetMaxY(self.imageScrollView.frame)+10, CGRectGetWidth(self.imageScrollView.frame)-10, 40)];
-    self.titleLbl.text=self.productModel.Goods_Name;
+//    self.titleLbl.text=self.productModel.Goods_Name;
+    self.titleLbl.text=@"西北餐饮网";
     self.titleLbl.textColor=[UIColor blackColor];
 //    self.titleLbl.backgroundColor=[UIColor lightGrayColor];
     [self.scrollerView addSubview:self.titleLbl];
     
     self.priceLbl=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.titleLbl.frame), CGRectGetMaxY(self.titleLbl.frame), CGRectGetWidth(self.titleLbl.frame), CGRectGetHeight(self.titleLbl.frame))];
     self.priceLbl.text=[NSString stringWithFormat:@"单价：¥%@",self.productModel.Goods_Price];
+    self.priceLbl.text=@"单价：¥23.00";
     self.priceLbl.textColor=[UIColor blackColor];
     [self.scrollerView addSubview:self.priceLbl];
     
@@ -70,24 +72,27 @@
     self.merchantLbl.textColor=[UIColor blackColor];
     WXMerchantModel *merchant=self.productModel.Merchant;
     self.merchantLbl.text=[NSString stringWithFormat:@"商家：%@",merchant.Merchant_Name];
+    self.merchantLbl.text=@"商家：天津万象";
     [self.scrollerView addSubview:self.merchantLbl];
     
     self.teleLbl=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.titleLbl.frame), CGRectGetMaxY(self.merchantLbl.frame), CGRectGetWidth(self.titleLbl.frame), CGRectGetHeight(self.titleLbl.frame))];
     self.teleLbl.textColor=[UIColor blackColor];
     self.teleLbl.text=[NSString stringWithFormat:@"联系电话：%@",merchant.Merchants_Tell];
+    self.teleLbl.text=@"联系电话: 12345678901";
     [self.scrollerView addSubview:self.teleLbl];
     
     UIView *v=[[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.teleLbl.frame), screenWidth, 1)];
     v.backgroundColor=[UIColor lightGrayColor];
     [self.scrollerView addSubview:v];
     
-    self.introductLbl=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.titleLbl.frame), CGRectGetMaxY(v.frame), CGRectGetWidth(self.titleLbl.frame), CGRectGetHeight(self.titleLbl.frame))];
+    self.introductLbl=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.titleLbl.frame), CGRectGetMaxY(v.frame)+5, CGRectGetWidth(self.titleLbl.frame), CGRectGetHeight(self.titleLbl.frame))];
     self.introductLbl.textColor=[UIColor blackColor];
     self.introductLbl.text=self.productModel.Goods_Introduce;
+    self.introductLbl.text=@"酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、  美味酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、酸辣味、";
     self.introductLbl.numberOfLines=0;
     self.introductLbl.font=[UIFont systemFontOfSize:16];
     CGSize size=[self.introductLbl boundingRectWithSize:CGSizeMake(screenWidth-40, 0)];
-    self.introductLbl.frame=CGRectMake(CGRectGetMinX(self.titleLbl.frame), CGRectGetMaxY(self.teleLbl.frame), size.width, size.height);
+    self.introductLbl.frame=CGRectMake(CGRectGetMinX(self.titleLbl.frame), CGRectGetMaxY(self.teleLbl.frame)+5, size.width, size.height);
     [self.scrollerView addSubview:self.introductLbl];
     self.scrollerView.contentSize=CGSizeMake(screenWidth, CGRectGetMaxY(self.introductLbl.frame));
     
@@ -99,7 +104,8 @@
     self.imageScrollView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     self.imageScrollView.delegate = self;
     [self.scrollerView addSubview:self.imageScrollView];
-    self.productImageArr=self.productModel.productImgArr;
+//    self.productImageArr=self.productModel.productImgArr;
+    self.productImageArr=[NSMutableArray arrayWithObjects:@"1.jpg",@"2.jpg", nil];
     
     //    self.productButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //    self.productButton.frame = CGRectMake(0, 0, screenWidth, screenHeigth);
@@ -114,7 +120,7 @@
     CGFloat imgH = screenWidth /2;
     ;
     CGFloat imgY = 0;
-    WXImageModel *imageModel=[[WXImageModel alloc] init];
+//    WXImageModel *imageModel=[[WXImageModel alloc] init];
     
     // 1. 循环创建5个UIImageView添加到ScrollView中
     for (int i = 0; i < self.productImageArr.count; i++) {
@@ -122,9 +128,10 @@
         self.imageView = [[UIImageView alloc] init];
         
         // 设置UIImageView中的图片
-        imageModel=[self.productImageArr objectAtIndex:i];
-        NSData *imgData=[NSData dataWithContentsOfURL:[NSURL URLWithString:imageModel.Image_ur]];
-        [self.imageView setImage:[UIImage imageWithData:imgData]];
+//        imageModel=[self.productImageArr objectAtIndex:i];
+//        NSData *imgData=[NSData dataWithContentsOfURL:[NSURL URLWithString:imageModel.Image_ur]];
+//        [self.imageView setImage:[UIImage imageWithData:imgData]];
+        [self.imageView setImage:[UIImage imageNamed:[self.productImageArr objectAtIndex:i]]];
         
         // 计算每个UIImageView在UIScrollView中的x坐标值
         CGFloat imgX = i * imgW;
@@ -147,7 +154,7 @@
     
     
     // 设置UIScrollView的contentSize(内容的实际大小)`
-    CGFloat maxW = self.imageScrollView.frame.size.width * 4;
+    CGFloat maxW = self.imageScrollView.frame.size.width * self.productImageArr.count;
     self.imageScrollView.contentSize = CGSizeMake(maxW, 0);
     
     
@@ -159,7 +166,7 @@
     self.imageScrollView.showsHorizontalScrollIndicator = NO;
     
     // 指定UIPageControl的总页数
-    self.pageControl.numberOfPages = 4;
+    self.pageControl.numberOfPages = self.productImageArr.count;
     
     // 指定默认是第0页
     self.pageControl.currentPage = 0;
