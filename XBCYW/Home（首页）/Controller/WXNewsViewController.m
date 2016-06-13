@@ -54,7 +54,7 @@
     
     [self.detailWebView loadRequest:request];//加载
     //5.导航
-//    [self.detailWebView goBack];
+    [self.detailWebView goBack];
 //    [self.detailWebView goForward];
 //    [self.detailWebView reload];//重载
 //    [self.detailWebView stopLoading];//取消载入内容

@@ -74,7 +74,7 @@
     }
     if (offY > 0 && self.isHeard && !self.isRefreshing) {
         self.isHeard = NO;
-        self.tipLb.text = @"上拉加载更多";
+        self.tipLb.text = @"加载更多";
         self.frame = CGRectMake(0, self.RefreshTableView.contentSize.height,
                                 self.frame.size.width, WJRefreshDropHeight);
         self.arrowImageView.transform = CGAffineTransformMakeRotation(M_PI);
