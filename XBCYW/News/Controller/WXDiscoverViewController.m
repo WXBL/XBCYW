@@ -27,13 +27,13 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.searchBar=[WXSearchBar searchBar];
-    [self.navigationController.navigationBar addSubview:self.searchBar];
-    self.searchBar.frame=CGRectMake(20, CGRectGetMinY(self.searchBar.frame), screenWidth-40, CGRectGetHeight(self.searchBar.frame));
-    self.searchBar.placeholder=@"请输入要搜索的美食";
+//    self.searchBar=[WXSearchBar searchBar];
+//    [self.navigationController.navigationBar addSubview:self.searchBar];
+//    self.searchBar.frame=CGRectMake(20, CGRectGetMinY(self.searchBar.frame), screenWidth-40, CGRectGetHeight(self.searchBar.frame));
+//    self.searchBar.placeholder=@"请输入要搜索的美食";
     [self addCollectionView];
      self.view.backgroundColor = [UIColor blueColor];
-    
+    [self addDate];
     
 }
 -(NSMutableArray *)array{
@@ -49,7 +49,7 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.headerReferenceSize = CGSizeMake(screenWidth, headerHeight);
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchBar.frame), screenWidth, screenHeigth - self.searchBar.frame.size.height) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeigth - self.searchBar.frame.size.height) collectionViewLayout:flowLayout];
     [self.collectionView registerClass:[WXfarmImportsTableViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class]forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"hederView"];
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
@@ -71,18 +71,13 @@
         hud.margin = 10.f;
         hud.yOffset = 150.f;
         hud.removeFromSuperViewOnHide = YES;
-        [hud hide:YES afterDelay:10];
+        [hud hide:YES afterDelay:3];
          hud.labelText = @"请求失败，请重试！";
     }];
 
     
 }
-//点击购物车触发事件
--(void)ClickBuyCartButton:(id)sender{
-    
-//    WXBuyCartController *buyCartViewController = [[WXBuyCartController alloc]init];
-//    [self presentViewController:buyCartViewController animated:YES completion:nil];
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -100,9 +95,9 @@
  */
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    //    return self.keepArray.count;
+        return self.array.count;
    
-        return 10;
+//        return 10;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -115,7 +110,7 @@
     
     //    //添加标题
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,screenWidth / 2-10, 30)];
-    titleLabel.text = [NSString stringWithFormat:@"农品铺子－共个产品"];
+//    titleLabel.text = [NSString stringWithFormat:@"农品铺子－共个产品"];
     titleLabel.font = [UIFont systemFontOfSize:15];
     titleLabel.textColor = [UIColor grayColor];
     titleLabel.textAlignment = NSTextAlignmentLeft;
@@ -137,20 +132,18 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *identify = @"cell";
-    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
+    WXfarmImportsTableViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
     [cell sizeToFit];
     if (!cell) {
         NSLog(@"无法创建CollectionViewCell时打印，自定义的cell就不可能进来");
+        
     }
-   
-//    [cell. setImage:[UIImage imageWithData:imgData]];
-//    cell.titleLabel.text = productmodel.Goods_Name;
-//    cell.priceLabel.text = productmodel.Goods_Price;
-//    cell.saleNumLabel.text = productmodel.Goods_Inventory;
-    //    cell.farmImage.image = [UIImage imageNamed:@""];
-    //        cell.titleLabel.text = @"asdasd";
-    //        cell.priceLabel.text = @"asdas";
-    //        cell.saleNumLabel.text = @"asdas";
+    WXProductModel *model=[self.array objectAtIndex:indexPath.row];
+//    WXProductModel *model=[[WXProductModel alloc] init];
+    NSData *imgData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[model.productImgArr firstObject]]];
+    [cell.farmImage setImage:[UIImage imageWithData:imgData]];
+    cell.titleLabel.text = model.Goods_Name;
+    cell.priceLabel.text = model.Goods_Price;
     return cell;
 }
 
@@ -176,10 +169,10 @@
 
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    WXFarmDetailViewController *farmDetail = [[WXFarmDetailViewController alloc]init];
-//    farmDetail.theProduct=[self.currentArray objectAtIndex:indexPath.row];
-//    [self presentViewController:farmDetail animated:YES completion:nil];
     
+    WXDelicacyDetailViewController *detailVC=[[WXDelicacyDetailViewController alloc] init];
+    detailVC.productModel=[self.array objectAtIndex:indexPath.row];
+    [self presentViewController:detailVC animated:YES completion:nil];
 }
 
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{

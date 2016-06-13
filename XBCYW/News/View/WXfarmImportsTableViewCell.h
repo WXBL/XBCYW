@@ -12,8 +12,6 @@
 
 @property (nonatomic,strong)UIImageView *farmImage;
 @property (nonatomic,strong)UILabel *titleLabel;
-@property (nonatomic,strong)UILabel *saleLabel;
-@property (nonatomic,strong)UILabel *saleNumLabel;
 @property (nonatomic,strong)UILabel *priceLabel;
 
 
