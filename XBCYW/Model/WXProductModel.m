@@ -29,6 +29,7 @@
         model.Goods_TypeName=model.Goods_Type.Type_Name;
         NSMutableArray *imageArr=(dict[@"Goods_Image"]==[NSNull null]?@"":dict[@"Goods_Image"]);
         model.productImgArr=[[[WXImageModel alloc]init]getImageListDataWithArrayJSON:imageArr];
+        model.url=(dict[@"url"]==[NSNull null])?@"":dict[@"url"];
         return model;
     }
     

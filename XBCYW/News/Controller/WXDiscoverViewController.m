@@ -44,17 +44,18 @@
 }
 -(void)addCollectionView{
     
-    float headerHeight = 30;
+    float headerHeight = 0;
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.headerReferenceSize = CGSizeMake(screenWidth, headerHeight);
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeigth - self.searchBar.frame.size.height) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeigth - self.searchBar.frame.size.height-50) collectionViewLayout:flowLayout];
     [self.collectionView registerClass:[WXfarmImportsTableViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class]forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"hederView"];
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.collectionView.bounces=NO;
     [self.view addSubview:self.collectionView];
     
 }
@@ -95,9 +96,9 @@
  */
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-        return self.array.count;
+//        return self.array.count;
    
-//        return 10;
+        return 10;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -109,7 +110,7 @@
     UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"hederView" forIndexPath:indexPath];
     
     //    //添加标题
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,screenWidth / 2-10, 30)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,screenWidth / 2-10, 0)];
 //    titleLabel.text = [NSString stringWithFormat:@"农品铺子－共个产品"];
     titleLabel.font = [UIFont systemFontOfSize:15];
     titleLabel.textColor = [UIColor grayColor];
@@ -117,7 +118,7 @@
     
 
     
-    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, 30)];
+    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, 0)];
     titleView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
     [titleView addSubview:titleLabel];
@@ -138,12 +139,15 @@
         NSLog(@"无法创建CollectionViewCell时打印，自定义的cell就不可能进来");
         
     }
-    WXProductModel *model=[self.array objectAtIndex:indexPath.row];
-//    WXProductModel *model=[[WXProductModel alloc] init];
-    NSData *imgData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[model.productImgArr firstObject]]];
-    [cell.farmImage setImage:[UIImage imageWithData:imgData]];
-    cell.titleLabel.text = model.Goods_Name;
-    cell.priceLabel.text = model.Goods_Price;
+//    WXProductModel *model=[self.array objectAtIndex:indexPath.row];
+//    NSData *imgData=[NSData dataWithContentsOfURL:[NSURL URLWithString:[model.productImgArr firstObject]]];
+//    [cell.farmImage setImage:[UIImage imageWithData:imgData]];
+//    cell.titleLabel.text = model.Goods_Name;
+//    cell.priceLabel.text = model.Goods_Price;
+    
+    [cell.farmImage setImage:[UIImage imageNamed:@"1.jpg"]];
+    cell.titleLabel.text=@"天津万象";
+    cell.priceLabel.text=@"¥ 222";
     return cell;
 }
 
@@ -171,7 +175,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     WXDelicacyDetailViewController *detailVC=[[WXDelicacyDetailViewController alloc] init];
-    detailVC.productModel=[self.array objectAtIndex:indexPath.row];
+//    detailVC.productModel=[self.array objectAtIndex:indexPath.row];
     [self presentViewController:detailVC animated:YES completion:nil];
 }
 

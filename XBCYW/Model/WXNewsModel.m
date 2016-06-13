@@ -19,6 +19,7 @@
         model.Release_Time=(dict[@"Release_Time"]==[NSNull null])?@"":dict[@"Release_Time"];
         NSMutableArray *imgArr=(dict[@"NewsImage"]==[NSNull null])?@"":dict[@"NewsImage"];
         model.newsImgArr=[[[WXImageModel alloc] init] getImageListDataWithArrayJSON:imgArr];
+        model.url=(dict[@"url"]==[NSNull null])?@"":dict[@"url"];
         return model;
     }
     return nil;

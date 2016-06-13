@@ -17,6 +17,7 @@
 @property(strong,nonatomic)NSString *Longitude;
 @property(strong,nonatomic)NSString *Latitude;
 @property(strong,nonatomic)NSString *Note;
+@property(nonatomic,strong)NSString *url;
 
 -(id)getMerchantDataWithDictionaryWithJSON:(NSDictionary *)dict;
 -(id)getMerchantListWithArrayJSON:(NSArray *)array;

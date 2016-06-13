@@ -20,6 +20,7 @@
         model.Longitude=(dict[@"Longitude"]==[NSNull null])?@"":dict[@"Longitude"];
         model.Latitude=(dict[@"Latitude"]==[NSNull null])?@"":dict[@"Latitude"];
         model.Note=(dict[@"Note"]==[NSNull null])?@"":dict[@"Note"];
+        model.url=(dict[@"url"]==[NSNull null])?@"":dict[@"url"];
         return model;
     }
     return nil;

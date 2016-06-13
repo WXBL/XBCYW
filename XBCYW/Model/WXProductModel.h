@@ -22,6 +22,7 @@
 @property(strong,nonatomic)NSString *Goods_TypeName;
 @property(strong,nonatomic)NSMutableArray *productImgArr;
 @property(strong,nonatomic)NSString *Note;
+@property(nonatomic,strong)NSString *url;
 
 -(id)getProductDataWithDictionaryJSON:(NSDictionary *)dict;
 -(id)getProductListWithArrayJSON:(NSArray *)array;
