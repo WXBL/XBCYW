@@ -534,6 +534,7 @@
         }else{
             return self.currentNewsArray.count+5;
         }
+//        return self.currentNewsArray.count/3;
     }else if (tableView == self.newsTableView){
         return 3;
 //        self.newsArray.count;
@@ -553,7 +554,8 @@
         if (!cell) {
             cell = [[WXHomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
-
+        cell.newsModel=[self.currentNewsArray objectAtIndex:indexPath.row*3];
+        NSLog(@"%ld",cell.newsBtn.tag);
          return cell;
     }else if (tableView == self.newsTableView){
         static NSString *cellId = @"newsCell";
@@ -598,6 +600,7 @@
 #pragma mark -点击资讯跳转事件
 -(void)WXHomeTableViewCell:(UITableViewCell *)homeViewCell didSelectButton:(UIButton *)button{
     WXNewsViewController *homeViewController = [[WXNewsViewController alloc]init];
+    NSLog(@"%ld",button.tag);
     [self presentViewController:homeViewController animated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning {

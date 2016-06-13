@@ -39,7 +39,7 @@
     for (int i =0; i<2; i++) {
         self.newsBtn = [[UIButton alloc]initWithFrame:CGRectMake(i*(self.frame.size.width/2)+10, 5, self.frame.size.width/2 -20, self.frame.size.height/2-5)];
         [self.newsBtn setImage:[UIImage imageNamed:@"newsImage1.jpg"] forState:UIControlStateNormal];
-        self.newsBtn.tag =i+1;
+        self.newsBtn.tag =i;
         [self addSubview:self.newsBtn];
         
         
@@ -71,6 +71,7 @@
     self.newsBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     self.newsBtn2.frame = CGRectMake(0, self.frame.size.height/2, self.frame.size.width, self.frame.size.height/2);
     [self.newsBtn2 addTarget:self action:@selector(ClickNewsBtn:) forControlEvents:UIControlEventTouchUpInside];
+    self.newsBtn2.tag=2;
     [self addSubview:self.newsBtn2];
     
     self.titleLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(10, 0,self.frame.size.width,20)];
