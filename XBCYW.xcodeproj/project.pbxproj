@@ -62,6 +62,8 @@
 		84600E681D07A5E800699ADD /* WXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E671D07A5E800699ADD /* WXHomeViewController.m */; };
 		84600E6C1D08033200699ADD /* WXNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E6B1D08033200699ADD /* WXNewsTableViewCell.m */; };
 		84600E6F1D0819EE00699ADD /* WXdynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84600E6E1D0819EE00699ADD /* WXdynamicTableViewCell.m */; };
+		84CA742B1D0E5E54004EF91C /* WXLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CA74291D0E5E54004EF91C /* WXLoadMoreFooter.m */; };
+		84CA742C1D0E5E54004EF91C /* WXLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CA742A1D0E5E54004EF91C /* WXLoadMoreFooter.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +188,9 @@
 		84600E6B1D08033200699ADD /* WXNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNewsTableViewCell.m; sourceTree = "<group>"; };
 		84600E6D1D0819EE00699ADD /* WXdynamicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXdynamicTableViewCell.h; sourceTree = "<group>"; };
 		84600E6E1D0819EE00699ADD /* WXdynamicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXdynamicTableViewCell.m; sourceTree = "<group>"; };
+		84CA74281D0E5E54004EF91C /* WXLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXLoadMoreFooter.h; sourceTree = "<group>"; };
+		84CA74291D0E5E54004EF91C /* WXLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXLoadMoreFooter.m; sourceTree = "<group>"; };
+		84CA742A1D0E5E54004EF91C /* WXLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXLoadMoreFooter.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +405,9 @@
 			children = (
 				841A97521CFEAEB7004D753B /* WXSearchBar.h */,
 				841A97531CFEAEB7004D753B /* WXSearchBar.m */,
+				84CA74281D0E5E54004EF91C /* WXLoadMoreFooter.h */,
+				84CA74291D0E5E54004EF91C /* WXLoadMoreFooter.m */,
+				84CA742A1D0E5E54004EF91C /* WXLoadMoreFooter.xib */,
 				841A975C1CFEE5D7004D753B /* WXHomeTableViewCell.h */,
 				841A975D1CFEE5D7004D753B /* WXHomeTableViewCell.m */,
 				84600E6A1D08033200699ADD /* WXNewsTableViewCell.h */,
@@ -771,6 +779,7 @@
 				841A96021CFDB4F4004D753B /* Info.plist in Resources */,
 				84600E321D066ED500699ADD /* newsImage1.jpg in Resources */,
 				841A975B1CFEDD42004D753B /* 2.jpg in Resources */,
+				84CA742C1D0E5E54004EF91C /* WXLoadMoreFooter.xib in Resources */,
 				841A97511CFE86C3004D753B /* Assets.xcassets in Resources */,
 				841A975A1CFEDD42004D753B /* 3.jpg in Resources */,
 				841A96071CFDB59B004D753B /* LaunchScreen.storyboard in Resources */,
@@ -826,6 +835,7 @@
 				7920256B1D067615002F1FFB /* AFURLSessionManager.m in Sources */,
 				84600E681D07A5E800699ADD /* WXHomeViewController.m in Sources */,
 				792025671D067615002F1FFB /* AFSecurityPolicy.m in Sources */,
+				84CA742B1D0E5E54004EF91C /* WXLoadMoreFooter.m in Sources */,
 				841A974F1CFE8587004D753B /* SHLUILabel.m in Sources */,
 				8400E89B1D0D66FE006ED98D /* WXfarmImportsTableViewCell.m in Sources */,
 				841A96101CFE7287004D753B /* WXNavigationController.m in Sources */,

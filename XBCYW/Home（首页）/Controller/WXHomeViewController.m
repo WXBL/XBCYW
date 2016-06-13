@@ -16,7 +16,8 @@
 #import "WXdynamicTableViewCell.h"
 #import "WJRefresh.h"
 #import "AFNetworking.h"
-
+#import "WXLoadMoreFooter.h"
+//#import "WXLoadMoreData.h"
 #import "WXNewsViewController.h"
 #import "WXNewsModel.h"
 #define GET_MERCHANT_URL @""
@@ -49,6 +50,8 @@
 
 @property (nonatomic,strong)WJRefresh *refresh;
 @property (nonatomic,strong)WXNewsModel *newsModel;
+@property(nonatomic,assign)NSInteger num;
+@property(nonatomic,strong)WXLoadMoreFooter *footer;
 @end
 
 @implementation WXHomeViewController
@@ -59,23 +62,7 @@
     }
     return _newsListArray;
 }
--(void)addData{
-    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
-    NSString *path=[NSString stringWithFormat:@"%@%@",BASE_SERVICE_URL,GET_MERCHANT_URL];
-    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation,NSArray *responceObject){
-        self.currentNewsArray=[self.newsModel getNewsListWithArrayJSON:responceObject];
-        [self.newsTableView reloadData];
-    }failure:^(AFHTTPRequestOperation *operation,NSError *error){
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        
-        hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"网络请求失败！";
-        hud.margin = 10.f;
-        hud.yOffset = 150.f;
-        hud.removeFromSuperViewOnHide = YES;
-        [hud hide:YES afterDelay:2];
-    }];
-}
+
 #pragma mark UIScrollViewDelegate
 // 实现UIScrollView的滚动方法
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -133,7 +120,7 @@
     // Do any additional setup after loading the view.
 
     self.view.backgroundColor = [UIColor whiteColor];
-
+    self.num=0;
 //    self.view.backgroundColor = [UIColor redColor];
 
     
@@ -154,19 +141,27 @@
     [self.view addGestureRecognizer:self.dismissMenuView];
     self.dismissMenuView.enabled = NO;
     
-    /* 初始化控件 */
-    _refresh = [[WJRefresh alloc]init];
-    __weak typeof(self)weakSelf = self;
-    [_refresh addHeardRefreshTo:self.tableView heardBlock:^{
-        [weakSelf createHeaderData];
-    } footBlok:^{
-        [weakSelf createFootData];
-    }];
-    [_refresh beginHeardRefresh];
+//    /* 初始化控件 */
+//    _refresh = [[WJRefresh alloc]init];
+//    __weak typeof(self)weakSelf = self;
+//    [_refresh addHeardRefreshTo:self.tableView heardBlock:^{
+//        [weakSelf createHeaderData];
+//    } footBlok:^{
+//        [weakSelf createFootData];
+//    }];
+//    [_refresh beginHeardRefresh];
+    
+    // 集成下拉刷新控件
+    [self setupDownRefresh];
+    
+    // 集成上拉刷新控件
+    [self setupUpRefresh];
     
     
     [self createNewsTableView];
     [self creatDynamicTableView];
+    
+    [self addData];
     
 }
 
@@ -174,6 +169,116 @@
     [super viewWillAppear:animated];
     
     [self setCategoryView];
+    
+}
+
+-(void)addData{
+    AFHTTPRequestOperationManager *manager=[AFHTTPRequestOperationManager manager];
+    NSString *path=[NSString stringWithFormat:@"%@%@",BASE_SERVICE_URL,GET_MERCHANT_URL];
+    [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation,NSArray *responceObject){
+        self.currentNewsArray=[self.newsModel getNewsListWithArrayJSON:responceObject];
+        [self.newsTableView reloadData];
+    }failure:^(AFHTTPRequestOperation *operation,NSError *error){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"网络请求失败！";
+        hud.margin = 10.f;
+        hud.yOffset = 150.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+    }];
+}
+/**
+ *集成下拉刷新控件
+ */
+-(void)setupDownRefresh{
+    //1.添加刷新控件
+    UIRefreshControl *control = [[UIRefreshControl alloc]init];
+    //只有用户通过手机下拉刷新才会触发UIControlEventValueChanged事件
+    [control addTarget:self action:@selector(loadNewData:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:control];
+    
+    //2.马上进入刷新状态（仅仅是显示刷新状态，并不会触发UIControlEventValueChanged事件）
+    [control beginRefreshing];
+    
+    //3.马上加载数据
+    [self loadNewData:control];
+}
+
+/**
+ *  集成上拉刷新控件
+ */
+- (void)setupUpRefresh
+{
+    self.footer = [WXLoadMoreFooter footer];
+    self.footer.hidden = NO;
+    self.tableView.tableFooterView = self.footer;
+    [self.footer.fresh startAnimating];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0*NSEC_PER_SEC)),dispatch_get_main_queue(),^{
+        
+        [self.currentNewsArray removeAllObjects];
+        self.currentNewsArray = [NSMutableArray array];
+        if (self.currentNewsArray.count <11) {
+            
+            self.num+=3;
+        }
+        //        if (self.num<self.currentNewsArray.count/3) {
+        //            self.num+=3;
+        //            if (self.num>self.currentNewsArray.count/3) {
+        //                self.num=self.currentNewsArray.count/3;
+        //            }
+        //        }
+        
+        [self.tableView reloadData];
+        
+        
+        
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5* NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
+        [self.footer.fresh stopAnimating];
+        
+        self.tableView.tableFooterView.hidden = YES;
+    });
+
+    
+    
+}
+
+/**
+ *加载更多数据
+ */
+-(void)loadMoreStatus{
+    
+}
+/**
+ *  UIRefreshControl进入刷新状态：加载最新的数据
+ */
+- (void)loadNewData:(UIRefreshControl *)control
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0*NSEC_PER_SEC)),dispatch_get_main_queue(),^{
+       
+        [self.currentNewsArray removeAllObjects];
+        self.currentNewsArray = [NSMutableArray array];
+                    if (self.currentNewsArray.count <11) {
+        
+                        self.num+=3;
+                    }
+//        if (self.num<self.currentNewsArray.count) {
+//            self.num+=3;
+//            if (self.num>self.currentNewsArray.count) {
+//                self.num=self.currentNewsArray.count;
+//            }
+//        }
+        
+        [self.tableView reloadData];
+        
+        [control endRefreshing];
+        
+    });
+    return;
     
 }
 
@@ -228,15 +333,21 @@
     [self.view addSubview:self.dynamicTableView];
     self.dynamicTableView.hidden = YES;
 }
-#pragma mark -刷新
+//#pragma mark -刷新
 -(void)createHeaderData{
     if (self.tableView) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.currentNewsArray removeAllObjects];
             self.currentNewsArray = [NSMutableArray array];
-            if (self.currentNewsArray.count <11) {
-              
-                self.currentNewsArray.count +3;
+//            if (self.currentNewsArray.count <11) {
+//              
+//                self.num+=3;
+//            }
+            if (self.num<self.currentNewsArray.count) {
+                self.num+=3;
+                if (self.num>self.currentNewsArray.count) {
+                    self.num=self.currentNewsArray.count;
+                }
             }
             [self.tableView reloadData];
             [_refresh endRefresh];
@@ -523,18 +634,18 @@
 }
 
 #pragma mark - Tableview dataSource
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == self.tableView) {
-        if (self.currentNewsArray.count>10) {
-            return 11;
-        }else{
-            return self.currentNewsArray.count+5;
-        }
+//        if (self.currentNewsArray.count>10) {
+//            return 11;
+//        }else{
+//            return self.currentNewsArray.count+5;
+//        }
 //        return self.currentNewsArray.count/3;
+
+            return self.num;
+
     }else if (tableView == self.newsTableView){
         return 3;
 //        self.newsArray.count;
@@ -554,7 +665,7 @@
         if (!cell) {
             cell = [[WXHomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
-        cell.newsModel=[self.currentNewsArray objectAtIndex:indexPath.row*3];
+//        cell.newsModel=[self.currentNewsArray objectAtIndex:indexPath.row*3];
         NSLog(@"%ld",cell.newsBtn.tag);
          return cell;
     }else if (tableView == self.newsTableView){
